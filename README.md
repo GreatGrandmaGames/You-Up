@@ -13,10 +13,6 @@ Based on a true story.
 Development: `iPhone 6s`
 Target Platforms: `iPhone 6 (+)`
 
-## 
-
-TODO: Write usage instructions
-
 ## Contributors
 
 1. Nina Demirjian
