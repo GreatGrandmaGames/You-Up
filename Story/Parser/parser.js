@@ -20,62 +20,87 @@ function createDateString()
   const d = new Date();
   return(d.getDate() + "-" + d.getFullYear() + "_" + d.getHours() + "-" + d.getHours() + "-" + d.getMinutes());
 }
+class Option {
+  constructor(option, next)
+  {
+    this.option = option;
+    this.next = next;
+  }
+};
 //TODO: Actually build the Parser
 
 function parser(jsonFile)
 {
-  for (let i = 0; i < passages.length; i++)
+  let finalString = "";
+  for (let i = 0; i < jsonFile.passages.length; i++)
   {
-    const currentPassage = passages[i];
-    let name, messageID, nextMessage, message;
-    let option0, option0next, option1, option1next, option2, option2next, triggerID = "";
+    const currentPassage = jsonFile.passages[i];
+    let name, messageID, nextMessage, message, triggerID;
+    const options = [];
     name = getName(currentPassage.text);
+    name = "$" + name;
     messageID = currentPassage.pid;
-    //check if there are options
-    if (currentPassage.links.length > 1)
+    if (currentPassage.links === undefined)
     {
-      nextMessage = -1;
-      for (let x = 0; x < links.length; x++)
-      {
-        //TODO
-        //nevermind, this is dumb. re-write this slightly so there are an array of option objects we
-        //can just append as strings.
-        //TODO
-      }
+      nextMessage = -777;
     }
     else
     {
-      nextMessage = currentPassage.links[0].pid;
+      //check if there are options
+      if (currentPassage.links.length > 1)
+      {
+        nextMessage = -1;
+        for (let x = 0; x < currentPassage.links.length; x++)
+        {
+          options.push(new Option(currentPassage.links[x].name, currentPassage.links[x].pid));
+        }
+      }
+      else
+      {
+        nextMessage = currentPassage.links[0].pid;
+      }
+    }
+    if (currentPassage.tags === undefined)
+    {
+      triggerID = -9999;
+    }
+    else
+    {
+      triggerID = currentPassage.tags[0];
     }
     message = getMessage(currentPassage.text);
+    const arr = [name, messageID, nextMessage, message, triggerID];
+    for (let y = 0; y < options.length; y++)
+    {
+      arr.push(options[y].option);
+      arr.push(options[y].next);
+    }
+    console.log(name);
+    finalString += tabMeUpBaby(arr) + "\n";
   }
+  return finalString;
 }
 function getName(string)
 {
+  //the name is between the pound key
+  const s = string.split("#");
+  return(s[1]);
   //getName from string (passages[i].text value) ("using # delimiters")
 }
 function getMessage(string)
 {
+  // the message is within the first and second \n's
+  const s = string.split("\n");
+  return s[1];
   //getMessage from strin g(passages[i].text value)
 }
 
-
-
-
-
-
-
-
-
-
-
-
 //fileBuilder
-const line0arr = ["name", "messageID", "nextMessage", "message", "option0", "option0next", "option1", "option1next", "option2", "option2next", "triggerID"];
-const line0 = tabMeUpBaby(line0arr);
-
+const line0arr = ["name", "messageID", "nextMessage", "message", "triggerID", "option0", "option0next", "option1", "option1next", "option2", "option2next"];
+let fileContent = tabMeUpBaby(line0arr) + "\n";
+fileContent += parser(jsonFile);
 const fileName = createDateString();
-fs.writeFile(FILEPATH_EXPORTS + fileName + ".tsv", line0, "utf8", function (err) {
+fs.writeFile(FILEPATH_EXPORTS + fileName + ".tsv", fileContent, "utf8", function (err) {
     if (err) {
         return console.log(err);
     }
@@ -85,7 +110,7 @@ fs.writeFile(FILEPATH_EXPORTS + fileName + ".tsv", line0, "utf8", function (err)
 
 /*
 Ideas?
-class Line = {
+class Line ={
   constructor(name, messageID, nextMessage, message, options, triggerID)
   {
     this.name = name;
