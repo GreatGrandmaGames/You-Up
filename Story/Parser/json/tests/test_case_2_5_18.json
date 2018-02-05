@@ -1,0 +1,180 @@
+{
+  "passages": [
+    {
+      "text": "#friendA#\nWhat are you up to? You busy?\n[[Busy]]\n[[Crying]]\n[[Not Busy]]",
+      "links": [
+        {
+          "name": "Busy",
+          "link": "Busy",
+          "pid": "2"
+        },
+        {
+          "name": "Crying",
+          "link": "Crying",
+          "pid": "3"
+        },
+        {
+          "name": "Not Busy",
+          "link": "Not Busy",
+          "pid": "4"
+        }
+      ],
+      "name": "What are you up to?",
+      "pid": "1",
+      "position": {
+        "x": "412",
+        "y": "200"
+      }
+    },
+    {
+      "text": "#player#\nI'm busy\n[[Okay, bye]]",
+      "links": [
+        {
+          "name": "Okay, bye",
+          "link": "Okay, bye",
+          "pid": "5"
+        }
+      ],
+      "name": "Busy",
+      "pid": "2",
+      "position": {
+        "x": "262",
+        "y": "350"
+      }
+    },
+    {
+      "text": "#player#\nI'm crying.\n[[I'm sad]]",
+      "links": [
+        {
+          "name": "I'm sad",
+          "link": "I'm sad",
+          "pid": "6"
+        }
+      ],
+      "name": "Crying",
+      "pid": "3",
+      "position": {
+        "x": "412",
+        "y": "350"
+      }
+    },
+    {
+      "text": "#player#\nI'm not busy\n[[Why?]]",
+      "links": [
+        {
+          "name": "Why?",
+          "link": "Why?",
+          "pid": "7"
+        }
+      ],
+      "name": "Not Busy",
+      "pid": "4",
+      "position": {
+        "x": "562",
+        "y": "350"
+      }
+    },
+    {
+      "text": "#friendA#\nOkay then, bye! See ya.",
+      "name": "Okay, bye",
+      "pid": "5",
+      "position": {
+        "x": "102",
+        "y": "701"
+      }
+    },
+    {
+      "text": "#player#\nI'm sad because of the boy.\n[[Okay, bye]]\n",
+      "links": [
+        {
+          "name": "Okay, bye",
+          "link": "Okay, bye",
+          "pid": "5"
+        }
+      ],
+      "name": "I'm sad",
+      "pid": "6",
+      "position": {
+        "x": "412",
+        "y": "500"
+      },
+      "tags": [
+        "0001"
+      ]
+    },
+    {
+      "text": "#player#\nWhy?\n[[Want to hang?]]",
+      "links": [
+        {
+          "name": "Want to hang?",
+          "link": "Want to hang?",
+          "pid": "8"
+        }
+      ],
+      "name": "Why?",
+      "pid": "7",
+      "position": {
+        "x": "562",
+        "y": "500"
+      }
+    },
+    {
+      "text": "#friendA#\nWant to hang?\n[[Yes]]\n[[No]]",
+      "links": [
+        {
+          "name": "Yes",
+          "link": "Yes",
+          "pid": "9"
+        },
+        {
+          "name": "No",
+          "link": "No",
+          "pid": "10"
+        }
+      ],
+      "name": "Want to hang?",
+      "pid": "8",
+      "position": {
+        "x": "562",
+        "y": "650"
+      }
+    },
+    {
+      "text": "#player#\nSure\n[[Okay, bye]]",
+      "links": [
+        {
+          "name": "Okay, bye",
+          "link": "Okay, bye",
+          "pid": "5"
+        }
+      ],
+      "name": "Yes",
+      "pid": "9",
+      "position": {
+        "x": "487",
+        "y": "800"
+      }
+    },
+    {
+      "text": "#player#\nNo.\n[[Okay, bye]]",
+      "links": [
+        {
+          "name": "Okay, bye",
+          "link": "Okay, bye",
+          "pid": "5"
+        }
+      ],
+      "name": "No",
+      "pid": "10",
+      "position": {
+        "x": "637",
+        "y": "800"
+      }
+    }
+  ],
+  "name": "test_case",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.2.1",
+  "ifid": "FFC9FFF2-41AD-499C-BA5D-7F755BC64C93"
+}
