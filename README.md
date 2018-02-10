@@ -2,7 +2,7 @@
 Prototype built for
 Global Game Jam 2018
 
-# Project Snippet
+# Project Title / Description
 
 You Up?
 A mobile text adventure.
