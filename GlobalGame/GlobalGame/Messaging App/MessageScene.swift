@@ -47,7 +47,7 @@ class MessageScene: SKScene {
             messageViews.append(messageView)
             
             //Load contents
-            let contents = readFile(path: "done - Master")!
+            let contents = try? readFile(path: "done - Master")
             
             var entries = [[String]]()
             
@@ -82,24 +82,28 @@ class MessageScene: SKScene {
                     }
                 }
             }
+            
+            currentViewIndex = 0
+            messageViews[0].toggleHidden(isHidden: false)
         }
-        
-        currentViewIndex = 0
-        messageViews[0].toggleHidden(isHidden: false)
     }
     
-    func readFile(path : String) -> String? {
+    
+    enum TSVParsingError : Error {
+        case FileNotFound(String)
+        case FileNotVaid(String)
+    }
+    
+    func readFile(path : String) throws -> String {
         guard let filePath = Bundle.main.path(forResource: path, ofType: "tsv") else {
-            print ("Provide me a CSV please")
-            return nil
+            throw TSVParsingError.FileNotFound("Error: Please provide a TSV please")
         }
         
         do {
             let contents = try String(contentsOfFile: filePath)
             return contents
         } catch {
-            print("File Read Error")
-            return nil
+            throw TSVParsingError.FileNotVaid("Error: TSV file not valid")
         }
     }
     
@@ -173,8 +177,6 @@ class MessageScene: SKScene {
         
         messageViews[currentViewIndex].handleTimer(timeInterval)
     }
-    
-    
 }
 
 public class MessageView : SKSpriteNode {

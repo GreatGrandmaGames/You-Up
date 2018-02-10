@@ -28,7 +28,6 @@
 		83BA0469201E5D8900F7ED27 /* Menu.sks in Resources */ = {isa = PBXBuildFile; fileRef = 83BA0468201E5D8900F7ED27 /* Menu.sks */; };
 		83BA046B201E5D9700F7ED27 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BA046A201E5D9700F7ED27 /* Menu.swift */; };
 		83BA0489201E725E00F7ED27 /* Credits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BA0488201E725E00F7ED27 /* Credits.swift */; };
-		83BA048B201E760D00F7ED27 /* done - Master.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 83BA048A201E760D00F7ED27 /* done - Master.tsv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +75,6 @@
 		83BA0468201E5D8900F7ED27 /* Menu.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Menu.sks; sourceTree = "<group>"; };
 		83BA046A201E5D9700F7ED27 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		83BA0488201E725E00F7ED27 /* Credits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credits.swift; sourceTree = "<group>"; };
-		83BA048A201E760D00F7ED27 /* done - Master.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "done - Master.tsv"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +102,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		170ECC80202FA3800017D9F5 /* Cinder App */ = {
+			isa = PBXGroup;
+			children = (
+				83BA0404201E1B1300F7ED27 /* GameScene.sks */,
+				83BA0408201E1B1300F7ED27 /* GameScene.swift */,
+				83BA0436201E1B2500F7ED27 /* boy.swift */,
+			);
+			path = "Cinder App";
+			sourceTree = "<group>";
+		};
+		170ECC81202FA4220017D9F5 /* Messaging App */ = {
+			isa = PBXGroup;
+			children = (
+				83BA044E201E283600F7ED27 /* MessageScene.sks */,
+				83BA0452201E28FB00F7ED27 /* Message.swift */,
+				83BA0450201E285600F7ED27 /* MessageScene.swift */,
+			);
+			path = "Messaging App";
+			sourceTree = "<group>";
+		};
+		170ECC82202FA47B0017D9F5 /* Main Menu */ = {
+			isa = PBXGroup;
+			children = (
+				83BA046A201E5D9700F7ED27 /* Menu.swift */,
+				83BA0468201E5D8900F7ED27 /* Menu.sks */,
+			);
+			path = "Main Menu";
+			sourceTree = "<group>";
+		};
 		83BA03F6201E1B1300F7ED27 = {
 			isa = PBXGroup;
 			children = (
@@ -128,20 +155,14 @@
 		83BA0401201E1B1300F7ED27 /* GlobalGame */ = {
 			isa = PBXGroup;
 			children = (
-				83BA048A201E760D00F7ED27 /* done - Master.tsv */,
+				170ECC82202FA47B0017D9F5 /* Main Menu */,
 				83BA0402201E1B1300F7ED27 /* AppDelegate.swift */,
-				83BA0436201E1B2500F7ED27 /* boy.swift */,
-				83BA0404201E1B1300F7ED27 /* GameScene.sks */,
-				83BA0406201E1B1300F7ED27 /* Actions.sks */,
-				83BA0408201E1B1300F7ED27 /* GameScene.swift */,
-				83BA0468201E5D8900F7ED27 /* Menu.sks */,
-				83BA046A201E5D9700F7ED27 /* Menu.swift */,
-				83BA045A201E30BB00F7ED27 /* audio.swift */,
 				83BA040A201E1B1300F7ED27 /* GameViewController.swift */,
-				83BA044E201E283600F7ED27 /* MessageScene.sks */,
-				83BA0452201E28FB00F7ED27 /* Message.swift */,
-				83BA0450201E285600F7ED27 /* MessageScene.swift */,
+				83BA0406201E1B1300F7ED27 /* Actions.sks */,
+				83BA045A201E30BB00F7ED27 /* audio.swift */,
+				170ECC81202FA4220017D9F5 /* Messaging App */,
 				83BA0464201E49DA00F7ED27 /* SCeneHolder.swift */,
+				170ECC80202FA3800017D9F5 /* Cinder App */,
 				83BA0462201E480E00F7ED27 /* holder.swift */,
 				83BA040C201E1B1300F7ED27 /* Main.storyboard */,
 				83BA040F201E1B1300F7ED27 /* Assets.xcassets */,
@@ -279,7 +300,6 @@
 			files = (
 				83BA040E201E1B1300F7ED27 /* Main.storyboard in Resources */,
 				83BA044F201E283600F7ED27 /* MessageScene.sks in Resources */,
-				83BA048B201E760D00F7ED27 /* done - Master.tsv in Resources */,
 				83BA0405201E1B1300F7ED27 /* GameScene.sks in Resources */,
 				83BA0469201E5D8900F7ED27 /* Menu.sks in Resources */,
 				83BA0410201E1B1300F7ED27 /* Assets.xcassets in Resources */,
