@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17EAB77C202F9B3400B29D5C /* cinderIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 17EAB77B202F9B3400B29D5C /* cinderIcon.png */; };
+		17EAB77E202F9B4200B29D5C /* loadIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 17EAB77D202F9B4200B29D5C /* loadIcon.png */; };
 		83BA0403201E1B1300F7ED27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BA0402201E1B1300F7ED27 /* AppDelegate.swift */; };
 		83BA0405201E1B1300F7ED27 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 83BA0404201E1B1300F7ED27 /* GameScene.sks */; };
 		83BA0407201E1B1300F7ED27 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 83BA0406201E1B1300F7ED27 /* Actions.sks */; };
@@ -46,9 +48,7 @@
 		83BA046D201E5F7A00F7ED27 /* messageBubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 83BA046C201E5F7A00F7ED27 /* messageBubble.png */; };
 		83BA046F201E600A00F7ED27 /* darkMessageBubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 83BA046E201E600900F7ED27 /* darkMessageBubble.png */; };
 		83BA0473201E635C00F7ED27 /* settingsIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 83BA0472201E635C00F7ED27 /* settingsIcon.png */; };
-		83BA0475201E662D00F7ED27 /* cinderIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 83BA0474201E662D00F7ED27 /* cinderIcon.png */; };
 		83BA0479201E680F00F7ED27 /* creditsIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 83BA0478201E680F00F7ED27 /* creditsIcon.png */; };
-		83BA047B201E685300F7ED27 /* loadIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 83BA047A201E685300F7ED27 /* loadIcon.png */; };
 		83BA0481201E6CD600F7ED27 /* cinderInstructions.png in Resources */ = {isa = PBXBuildFile; fileRef = 83BA0480201E6CD600F7ED27 /* cinderInstructions.png */; };
 		83BA0485201E714300F7ED27 /* yesFace.png in Resources */ = {isa = PBXBuildFile; fileRef = 83BA0483201E714300F7ED27 /* yesFace.png */; };
 		83BA0487201E71F100F7ED27 /* nahFace.png in Resources */ = {isa = PBXBuildFile; fileRef = 83BA0486201E71F100F7ED27 /* nahFace.png */; };
@@ -74,6 +74,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		17EAB77B202F9B3400B29D5C /* cinderIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cinderIcon.png; sourceTree = "<group>"; };
+		17EAB77D202F9B4200B29D5C /* loadIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loadIcon.png; sourceTree = "<group>"; };
 		83BA03FF201E1B1300F7ED27 /* GlobalGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GlobalGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83BA0402201E1B1300F7ED27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83BA0404201E1B1300F7ED27 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -119,9 +121,7 @@
 		83BA046C201E5F7A00F7ED27 /* messageBubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = messageBubble.png; sourceTree = "<group>"; };
 		83BA046E201E600900F7ED27 /* darkMessageBubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = darkMessageBubble.png; sourceTree = "<group>"; };
 		83BA0472201E635C00F7ED27 /* settingsIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settingsIcon.png; sourceTree = "<group>"; };
-		83BA0474201E662D00F7ED27 /* cinderIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cinderIcon.png; path = ../../cinderIcon.png; sourceTree = "<group>"; };
 		83BA0478201E680F00F7ED27 /* creditsIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = creditsIcon.png; sourceTree = "<group>"; };
-		83BA047A201E685300F7ED27 /* loadIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = loadIcon.png; path = ../../loadIcon.png; sourceTree = "<group>"; };
 		83BA0480201E6CD600F7ED27 /* cinderInstructions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cinderInstructions.png; sourceTree = "<group>"; };
 		83BA0483201E714300F7ED27 /* yesFace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yesFace.png; sourceTree = "<group>"; };
 		83BA0486201E71F100F7ED27 /* nahFace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nahFace.png; sourceTree = "<group>"; };
@@ -164,14 +164,14 @@
 				83BA0400201E1B1300F7ED27 /* Products */,
 				83BA0483201E714300F7ED27 /* yesFace.png */,
 				83BA0480201E6CD600F7ED27 /* cinderInstructions.png */,
-				83BA047A201E685300F7ED27 /* loadIcon.png */,
+				17EAB77D202F9B4200B29D5C /* loadIcon.png */,
 				83BA0472201E635C00F7ED27 /* settingsIcon.png */,
 				83BA0486201E71F100F7ED27 /* nahFace.png */,
 				83BA0478201E680F00F7ED27 /* creditsIcon.png */,
 				83BA046E201E600900F7ED27 /* darkMessageBubble.png */,
 				83BA046C201E5F7A00F7ED27 /* messageBubble.png */,
 				83BA0466201E5BFC00F7ED27 /* textSent.wav */,
-				83BA0474201E662D00F7ED27 /* cinderIcon.png */,
+				17EAB77B202F9B3400B29D5C /* cinderIcon.png */,
 				83BA0460201E395F00F7ED27 /* GGGLaunchScreen.png */,
 				83BA045C201E36DF00F7ED27 /* blueMessage.png */,
 				83BA045D201E36E000F7ED27 /* grayMessage.png */,
@@ -352,11 +352,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17EAB77C202F9B3400B29D5C /* cinderIcon.png in Resources */,
 				83BA0485201E714300F7ED27 /* yesFace.png in Resources */,
 				83BA044A201E1BAE00F7ED27 /* Alvaro.jpg in Resources */,
 				83BA0457201E2F5000F7ED27 /* alphaGray.png in Resources */,
 				83BA040E201E1B1300F7ED27 /* Main.storyboard in Resources */,
 				83BA0487201E71F100F7ED27 /* nahFace.png in Resources */,
+				17EAB77E202F9B4200B29D5C /* loadIcon.png in Resources */,
 				83BA046D201E5F7A00F7ED27 /* messageBubble.png in Resources */,
 				83BA0479201E680F00F7ED27 /* creditsIcon.png in Resources */,
 				83BA0447201E1BAE00F7ED27 /* Jordan.jpg in Resources */,
@@ -366,7 +368,6 @@
 				83BA044B201E1BAE00F7ED27 /* Eli.png in Resources */,
 				83BA0455201E2D0000F7ED27 /* newMessage.png in Resources */,
 				83BA044C201E1BAE00F7ED27 /* lightgray.png in Resources */,
-				83BA047B201E685300F7ED27 /* loadIcon.png in Resources */,
 				83BA048B201E760D00F7ED27 /* done - Master.tsv in Resources */,
 				83BA0481201E6CD600F7ED27 /* cinderInstructions.png in Resources */,
 				83BA0443201E1BAE00F7ED27 /* Grady.jpg in Resources */,
@@ -379,7 +380,6 @@
 				83BA0449201E1BAE00F7ED27 /* Frank.jpg in Resources */,
 				83BA0445201E1BAE00F7ED27 /* Lovett.png in Resources */,
 				83BA0469201E5D8900F7ED27 /* Menu.sks in Resources */,
-				83BA0475201E662D00F7ED27 /* cinderIcon.png in Resources */,
 				83BA0410201E1B1300F7ED27 /* Assets.xcassets in Resources */,
 				83BA045E201E36E000F7ED27 /* blueMessage.png in Resources */,
 				83BA0413201E1B1300F7ED27 /* LaunchScreen.storyboard in Resources */,
