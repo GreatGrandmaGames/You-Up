@@ -95,7 +95,7 @@ public class MessageNode : SKSpriteNode{
         
         var i = 0
         
-        var counter : CGFloat = 0
+        var yPos : CGFloat = 0
         var lineNums = 0
         
         while i < m.message.count {
@@ -122,9 +122,9 @@ public class MessageNode : SKSpriteNode{
             lineNode.fontSize = 36
             lineNode.fontName = "Avenir"
             
-            lineNode.position = CGPoint(x: 0, y: -counter)
+            lineNode.position = CGPoint(x: 0, y: yPos)
             
-            counter += lineNode.frame.height
+            yPos -= lineNode.frame.height
             
             messageLabel.append(lineNode)
         }
@@ -146,23 +146,41 @@ public class MessageNode : SKSpriteNode{
             totalHeight += l.frame.height
         }
         
-        var color : UIColor = UIColor.gray
+        super.init(texture: nil, color: UIColor(), size: CGSize(width: maxWidth * 1.05, height: 1.4 * totalHeight))
+        
+        self.move(toParent: p)
+        self.zPosition = -1
         
         if m.sender != nil {
+            
+            //Character sent message - needs to be left aligned and sender color
+            
             color = m.sender!.color
+            /*
+            for l in messageLabel {
+                l.horizontalAlignmentMode = .left
+                l.position = CGPoint(x: 30, y: l.position.y)
+            }*/
+        } else {
+            
+            //Player sent message - needs to be right aligned and grey
+            color = UIColor.gray
+            /*
+            for l in messageLabel {
+                l.horizontalAlignmentMode = .right
+                l.position = CGPoint(x: self.scene!.size.width - 30, y: l.position.y)
+            }
+            */
         }
-        
-        super.init(texture: nil, color: color, size: CGSize(width: maxWidth * 1.05, height: 1.4 * totalHeight))
+
         
         for l in messageLabel {
             l.move(toParent: self)
             l.zPosition = 20
-            l.position = CGPoint(x: 0, y: l.position.y + (totalHeight * 0.6) - messageLabel[0].frame.height)
+            l.position = CGPoint(x: l.position.x, y: l.position.y + (totalHeight * 0.6) - messageLabel[0].frame.height)
         }
         
-        
-        self.move(toParent: p)
-        self.zPosition = -1
+
     }
     
     required public init?(coder aDecoder: NSCoder) {

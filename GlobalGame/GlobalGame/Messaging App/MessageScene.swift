@@ -25,11 +25,10 @@ class MessageScene: SKScene {
         
         self.addChild(background)
         
-        ///Load CSV
         var senders = [Sender]()
         
         //init your senders manually
-        senders.append(Sender(name: "Jason", color: UIColor.darkGray))
+        senders.append(Sender(name: "Jason", color: UIColor.blue))
         
         ceiling = (size.height * 0.5) - (size.height * 0.075)
         
@@ -47,63 +46,75 @@ class MessageScene: SKScene {
             messageViews.append(messageView)
             
             //Load contents
-            let contents = try? readFile(path: "done - Master")
-            
-            var entries = [[String]]()
-            
-            contents.enumerateLines(invoking: { (string, b : inout Bool) in
-                entries.append(string.components(separatedBy: "\t"))
-            })
-            
-            for i in 1..<entries.count {
+            do {
+                let contents = try readFile(path: "test1")
                 
-                let line = entries[i]
                 
-                if line[2] == "-0001" {
+                var entries = [[String]]()
+                
+                contents.enumerateLines(invoking: { (string, b : inout Bool) in
+                    entries.append(string.components(separatedBy: "\t"))
+                })
+                
+                for i in 1..<entries.count {
                     
-                    var options = [Option]()
+                    let line = entries[i]
                     
-                    for j in [4,6,8]{
-                        if j + 1 < line.count && line[j] != "" && line[j] != "" {
-                            print(line[j + 1])
-                            options.append(Option(Message(line[j]), responseUID: line[j + 1]))
+                    if line[2] == "-1" {
+                        
+                        var options = [Option]()
+                        
+                        for j in [5,7,9]{
+                            if j + 1 < line.count && line[j] != "" && line[j] != "" {
+                                print(line[j + 1])
+                                options.append(Option(Message(line[j]), responseUID: line[j + 1]))
+                            }
                         }
-                    }
-                    
-                    messageView.messages.append(Message(line[3], uid: line[1], nextUID: String(-1), sender: s, options: options))
-                    
-                } else {
-                    if line[0] == "$playerName" {
-                        messageView.messages.append(Message(line[3], uid: line[1], nextUID: line[2]))
+                        
+                        messageView.messages.append(Message(line[3], uid: line[1], nextUID: String(-1), sender: s, options: options))
                         
                     } else {
-                        messageView.messages.append(Message(line[3], uid: line[1], nextUID: line[2], sender: s))
-                        
+                        if line[0] == "$player" {
+                            messageView.messages.append(Message(line[3], uid: line[1], nextUID: line[2]))
+                            
+                        } else {
+                            messageView.messages.append(Message(line[3], uid: line[1], nextUID: line[2], sender: s))
+                            
+                        }
                     }
                 }
+                
+                currentViewIndex = 0
+                messageViews[0].toggleHidden(isHidden: false)
+                
+            } catch TSVParsingError.FileNotFound{
+                print("Error: Please provide a TSV")
+            } catch TSVParsingError.FileNotVaid {
+                print("Error: TSV file not valid")
+            } catch {
+                print("Error: Parsing failed")
             }
             
-            currentViewIndex = 0
-            messageViews[0].toggleHidden(isHidden: false)
         }
     }
     
     
     enum TSVParsingError : Error {
-        case FileNotFound(String)
-        case FileNotVaid(String)
+        case FileNotFound
+        case FileNotVaid
     }
     
     func readFile(path : String) throws -> String {
         guard let filePath = Bundle.main.path(forResource: path, ofType: "tsv") else {
-            throw TSVParsingError.FileNotFound("Error: Please provide a TSV please")
+            throw TSVParsingError.FileNotFound
         }
         
         do {
             let contents = try String(contentsOfFile: filePath)
+            print(contents)
             return contents
         } catch {
-            throw TSVParsingError.FileNotVaid("Error: TSV file not valid")
+            throw TSVParsingError.FileNotVaid
         }
     }
     
@@ -234,7 +245,7 @@ public class MessageView : SKSpriteNode {
             let m = MessageNode(m: messages[currentMessageIndex], p: self)
             
             print("Message " + m.message.message)
-            m.texture = SKTexture(imageNamed: "blueMessage")
+            m.texture = SKTexture(imageNamed: "whiteMessage")
             
             /*
              if m.message.sender != nil {
