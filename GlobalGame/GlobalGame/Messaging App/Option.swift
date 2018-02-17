@@ -10,12 +10,12 @@ import Foundation
 
 public class Option : NSObject {
     
-    let messageToDisplay : Message
+    let text : String
     let responseUID : String
     let additionalEffects : (() -> ())?
     
-    public init(_ m: Message, responseUID: String, additionalEffects: (() -> ())? = nil) {
-        self.messageToDisplay = m
+    public init(_ m: String, responseUID: String, additionalEffects: (() -> ())? = nil) {
+        self.text = m
         self.responseUID = responseUID
         self.additionalEffects = additionalEffects
     }

@@ -9,17 +9,22 @@
 import Foundation
 import SpriteKit
 
-public class OptionNode : MessageNode {
+public class OptionNode : MultiLineLabelNode {
     
     let option : Option
     
     public init(_ o: Option) {
         option = o
         
-        super.init(o.messageToDisplay)
+        super.init(backgroundTexture: SKTexture(imageNamed: "whiteMessage"), backgroundColor: UIColor.red, text: o.text, fontName: "Avenir", textSize: 36.0)
         
+        for l in super.lines {
+            l.name = "Option Node"
+        }
+
         //hardcode
         super.background.size = CGSize(width: 100.0, height: 60.0)
+        super.background.name = "Option Node"
     }
     
     required public init?(coder aDecoder: NSCoder) {

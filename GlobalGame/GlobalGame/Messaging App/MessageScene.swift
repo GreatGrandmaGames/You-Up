@@ -12,6 +12,7 @@ import GameplayKit
 
 var ceiling : CGFloat = 400
 var readingFactor : Double = 0.4
+let messageIndentPercentage : CGFloat = 0.03
 
 class MessageScene: SKScene {
     
@@ -61,7 +62,7 @@ class MessageScene: SKScene {
                     for j in [5,7,9]{
                         if j + 1 < line.count && line[j] != "" && line[j] != "" {
                             print(line[j + 1])
-                            options.append(Option(Message(line[j]), responseUID: line[j + 1]))
+                            options.append(Option(line[j], responseUID: line[j + 1]))
                         }
                     }
                     
@@ -113,23 +114,16 @@ class MessageScene: SKScene {
         let positionInScene = touch.location(in: self)
         let touchedNode = self.atPoint(positionInScene)
         
-        if let optionNode = touchedNode as? OptionNode{
-            onOption(opt: optionNode.option)
-        } else if let labelNode = touchedNode as? SKLabelNode {
-            if let optParent = labelNode.parent as? OptionNode {
-                onOption(opt: optParent.option)
+        if touchedNode.name == "Option Node"{
+            if let optionNode = touchedNode as? OptionNode {
+                
+                spawnMessageNode(withUID: optionNode.option.responseUID)
+                
+                self.removeChildren(in: optionNodes)
             }
-        }
+        } 
     }
-    
-    //Helper for touches
-    func onOption(opt : Option){
-        
-        spawnMessageNode(withUID: opt.responseUID)
-        
-        self.removeChildren(in: optionNodes)
-    }
-    
+
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
     }
     
@@ -199,25 +193,21 @@ class MessageScene: SKScene {
             let m = MessageNode(messages[currentMessageIndex])
             m.move(toParent: self)
             
-            m.position = CGPoint.zero
-            m.background.color = UIColor.blue
-            
             print("Message: " + m.message.text)
             
-            /*
-             if m.message.sender != nil {
-             xPosition = -160
-             } else if m.message.options == nil {
-             xPosition = 260
-             }
-             */
-            
+            var xPos : CGFloat
             if m.message.sender != nil {
                 playASound(fileName: "textSent")
+                //hardcode, needs to scale
+                xPos = self.frame.width * (messageIndentPercentage - 1/2)
+
+            } else {
+                //hardcode, needs to scale
+                xPos = self.frame.width * (-messageIndentPercentage + 1/2)
             }
             
-            /*
-             let moveInAnimation = SKAction.move(to: CGPoint.zero, duration: 0.3)
+            
+            let moveInAnimation = SKAction.move(to: CGPoint(x: xPos, y:0.0), duration: 0.3)
              
              m.position = CGPoint(x: m.position.x + (m.message.sender != nil ? -600 : 600), y: m.position.y)
              
@@ -243,7 +233,7 @@ class MessageScene: SKScene {
             if m.message.options != nil && m.message.options!.count > 0 {
                 spawnOptions(messages[currentMessageIndex])
             }
- */
+ 
         }
     }
     

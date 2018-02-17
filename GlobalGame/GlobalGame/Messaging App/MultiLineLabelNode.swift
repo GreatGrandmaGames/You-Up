@@ -15,6 +15,10 @@ public class MultiLineLabelNode : SKNode {
     var lines : [SKLabelNode]
     
     public init(backgroundTexture: SKTexture, backgroundColor: UIColor, text: String, fontName: String, textSize: CGFloat){
+        if(text == ""){
+            fatalError("Cannot create a MultiLineLabelNode with an empty string")
+        }
+        
         lines = [SKLabelNode]()
         
         var i = 0
@@ -54,9 +58,9 @@ public class MultiLineLabelNode : SKNode {
             lines.append(lineNode)
         }
         
+        
         //calculating the width / height of the box
         var maxWidth :CGFloat = 0
-        var maxHeight :CGFloat = 0
         var totalHeight : CGFloat = 0
         
         for l in lines {
@@ -64,14 +68,18 @@ public class MultiLineLabelNode : SKNode {
                 maxWidth = l.frame.width
             }
             
-            if(maxHeight < l.frame.height){
-                maxHeight = l.frame.height
-            }
-            
             totalHeight += l.frame.height
         }
         
-        self.background = SKSpriteNode(texture: backgroundTexture, color: backgroundColor, size: CGSize(width: maxWidth, height: totalHeight))
+        self.background = SKSpriteNode(texture: backgroundTexture, color: backgroundColor, size: CGSize(width: maxWidth * 1.1, height: totalHeight * 1.2))
+        
+        
+        self.background.position = CGPoint(x: self.background.position.x - (self.lines[0].frame.width * 0.05), y: self.lines[self.lines.count / 2].position.y + (self.lines[0].frame.height * 0.1))
+    
+        if(self.lines.count % 2 == 0){
+            self.background.position = CGPoint(x: self.background.position.x, y: self.background.position.y + (self.lines[0].frame.size.height) / 2)
+        }
+        
         self.background.colorBlendFactor = 1
         self.background.zPosition = -1
         
@@ -79,8 +87,12 @@ public class MultiLineLabelNode : SKNode {
         
         self.background.move(toParent: self)
         
+        print(background.position)
+        
         for l in lines {
             l.move(toParent: self)
+            
+            print(l.position)
         }
     }
     
