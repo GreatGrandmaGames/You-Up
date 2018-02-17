@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17736D822038C2710016357C /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17736D812038C2710016357C /* Option.swift */; };
+		17736D842038C28D0016357C /* Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17736D832038C28D0016357C /* Sender.swift */; };
+		17736D862038C2B50016357C /* MessageNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17736D852038C2B50016357C /* MessageNode.swift */; };
+		17736D882038C2D30016357C /* OptionNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17736D872038C2D30016357C /* OptionNode.swift */; };
+		17736D8C2038C3790016357C /* MultiLineLabelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17736D8B2038C3790016357C /* MultiLineLabelNode.swift */; };
 		17EAF96720378E280079CAFD /* test1.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 17EAF96620378E280079CAFD /* test1.tsv */; };
 		17EAF96920378E970079CAFD /* textSent.wav in Resources */ = {isa = PBXBuildFile; fileRef = 17EAF96820378E970079CAFD /* textSent.wav */; };
 		83BA0403201E1B1300F7ED27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BA0402201E1B1300F7ED27 /* AppDelegate.swift */; };
@@ -48,6 +53,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		17736D812038C2710016357C /* Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
+		17736D832038C28D0016357C /* Sender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sender.swift; sourceTree = "<group>"; };
+		17736D852038C2B50016357C /* MessageNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageNode.swift; sourceTree = "<group>"; };
+		17736D872038C2D30016357C /* OptionNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionNode.swift; sourceTree = "<group>"; };
+		17736D8B2038C3790016357C /* MultiLineLabelNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiLineLabelNode.swift; sourceTree = "<group>"; };
 		17EAF96620378E280079CAFD /* test1.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test1.tsv; sourceTree = "<group>"; };
 		17EAF96820378E970079CAFD /* textSent.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = textSent.wav; sourceTree = "<group>"; };
 		83BA03FF201E1B1300F7ED27 /* GlobalGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GlobalGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +127,11 @@
 			children = (
 				83BA044E201E283600F7ED27 /* MessageScene.sks */,
 				83BA0452201E28FB00F7ED27 /* Message.swift */,
+				17736D872038C2D30016357C /* OptionNode.swift */,
+				17736D852038C2B50016357C /* MessageNode.swift */,
+				17736D8B2038C3790016357C /* MultiLineLabelNode.swift */,
+				17736D832038C28D0016357C /* Sender.swift */,
+				17736D812038C2710016357C /* Option.swift */,
 				83BA0450201E285600F7ED27 /* MessageScene.swift */,
 			);
 			path = "Messaging App";
@@ -342,12 +357,17 @@
 			files = (
 				83BA0409201E1B1300F7ED27 /* GameScene.swift in Sources */,
 				83BA040B201E1B1300F7ED27 /* GameViewController.swift in Sources */,
+				17736D822038C2710016357C /* Option.swift in Sources */,
 				83BA0437201E1B2500F7ED27 /* boy.swift in Sources */,
 				83BA046B201E5D9700F7ED27 /* Menu.swift in Sources */,
+				17736D842038C28D0016357C /* Sender.swift in Sources */,
 				83BA0489201E725E00F7ED27 /* Credits.swift in Sources */,
+				17736D8C2038C3790016357C /* MultiLineLabelNode.swift in Sources */,
+				17736D862038C2B50016357C /* MessageNode.swift in Sources */,
 				83BA0453201E28FB00F7ED27 /* Message.swift in Sources */,
 				83BA045B201E30BB00F7ED27 /* audio.swift in Sources */,
 				83BA0403201E1B1300F7ED27 /* AppDelegate.swift in Sources */,
+				17736D882038C2D30016357C /* OptionNode.swift in Sources */,
 				83BA0451201E285600F7ED27 /* MessageScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

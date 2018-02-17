@@ -15,8 +15,23 @@ var readingFactor : Double = 0.4
 
 class MessageScene: SKScene {
     
-    var messageViews = [MessageView]()
-    var currentViewIndex : Int = 0
+    public var speechTimer : Double = 0
+    
+    public var currentMessageUID : String = ""
+    var currentMessageIndex : Int = 0
+    public var messages : [Message] = [Message]() //this is for intial parsing
+    public var messageNodes : [MessageNode] = [MessageNode]() //this is actual nodes in the scene
+    public var optionNodes : [OptionNode] = [OptionNode]()
+    
+    public let sender : Sender
+    
+    required init?(coder aDecoder: NSCoder) {
+        
+        //init your senders manually for now
+        sender = Sender(name: "Jason", color: UIColor.blue)
+        
+        super.init(coder: aDecoder)
+    }
     
     override func didMove(to view: SKView) {
         //Background
@@ -24,77 +39,51 @@ class MessageScene: SKScene {
         background.zPosition = -10
         
         self.addChild(background)
-        
-        var senders = [Sender]()
-        
-        //init your senders manually
-        senders.append(Sender(name: "Jason", color: UIColor.blue))
-        
-        ceiling = (size.height * 0.5) - (size.height * 0.075)
-        
-        let inc : CGFloat = size.width / CGFloat(senders.count + 1)
-        var counter : CGFloat = 1
-        
-        for s in senders {
-            let senderNode = SenderNode(s, p: self)
-            senderNode.position = CGPoint(x: (counter * inc) - (size.width / 2), y: ceiling)
+
+        //Load contents - parsing
+        do {
+            let contents = try readFile(path: "test1")
             
-            counter += 1
+            var entries = [[String]]()
             
-            let messageView = MessageView(s, parent: self)
+            contents.enumerateLines(invoking: { (string, b : inout Bool) in
+                entries.append(string.components(separatedBy: "\t"))
+            })
             
-            messageViews.append(messageView)
-            
-            //Load contents
-            do {
-                let contents = try readFile(path: "test1")
+            for i in 1..<entries.count {
                 
+                let line = entries[i]
                 
-                var entries = [[String]]()
-                
-                contents.enumerateLines(invoking: { (string, b : inout Bool) in
-                    entries.append(string.components(separatedBy: "\t"))
-                })
-                
-                for i in 1..<entries.count {
+                if line[2] == "-1" {
                     
-                    let line = entries[i]
+                    var options = [Option]()
                     
-                    if line[2] == "-1" {
-                        
-                        var options = [Option]()
-                        
-                        for j in [5,7,9]{
-                            if j + 1 < line.count && line[j] != "" && line[j] != "" {
-                                print(line[j + 1])
-                                options.append(Option(Message(line[j]), responseUID: line[j + 1]))
-                            }
-                        }
-                        
-                        messageView.messages.append(Message(line[3], uid: line[1], nextUID: String(-1), sender: s, options: options))
-                        
-                    } else {
-                        if line[0] == "$player" {
-                            messageView.messages.append(Message(line[3], uid: line[1], nextUID: line[2]))
-                            
-                        } else {
-                            messageView.messages.append(Message(line[3], uid: line[1], nextUID: line[2], sender: s))
-                            
+                    for j in [5,7,9]{
+                        if j + 1 < line.count && line[j] != "" && line[j] != "" {
+                            print(line[j + 1])
+                            options.append(Option(Message(line[j]), responseUID: line[j + 1]))
                         }
                     }
+                    
+                    messages.append(Message(line[3], uid: line[1], nextUID: String(-1), sender: sender, options: options))
+                    
+                } else {
+                    if line[0] == "$player" {
+                        messages.append(Message(line[3], uid: line[1], nextUID: line[2]))
+                        
+                    } else {
+                        messages.append(Message(line[3], uid: line[1], nextUID: line[2], sender: sender))
+                        
+                    }
                 }
-                
-                currentViewIndex = 0
-                messageViews[0].toggleHidden(isHidden: false)
-                
-            } catch TSVParsingError.FileNotFound{
-                print("Error: Please provide a TSV")
-            } catch TSVParsingError.FileNotVaid {
-                print("Error: TSV file not valid")
-            } catch {
-                print("Error: Parsing failed")
             }
             
+        } catch TSVParsingError.FileNotFound{
+            print("Error: Please provide a TSV")
+        } catch TSVParsingError.FileNotVaid {
+            print("Error: TSV file not valid")
+        } catch {
+            print("Error: Parsing failed")
         }
     }
     
@@ -126,35 +115,19 @@ class MessageScene: SKScene {
         
         if let optionNode = touchedNode as? OptionNode{
             onOption(opt: optionNode.option)
-        } else if let senderNode = touchedNode as? SenderNode {
-            onSender(sender: senderNode.sender)
         } else if let labelNode = touchedNode as? SKLabelNode {
             if let optParent = labelNode.parent as? OptionNode {
                 onOption(opt: optParent.option)
-            } else if let senderParent = labelNode.parent as? SenderNode{
-                onSender(sender: senderParent.sender)
             }
         }
     }
     
+    //Helper for touches
     func onOption(opt : Option){
         
-        messageViews[currentViewIndex].spawnMessageNode(withUID: opt.responseUID)
+        spawnMessageNode(withUID: opt.responseUID)
         
-        self.removeChildren(in: messageViews[currentViewIndex].optionNodes)
-    }
-    
-    func onSender(sender : Sender) {
-        for i in 0..<messageViews.count{
-            if messageViews[i].sender == sender {
-                messageViews[currentViewIndex].toggleHidden(isHidden: true)
-                
-                currentViewIndex = i
-                messageViews[currentViewIndex].toggleHidden(isHidden: false)
-                
-                return
-            }
-        }
+        self.removeChildren(in: optionNodes)
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -186,40 +159,21 @@ class MessageScene: SKScene {
             return
         }
         
-        messageViews[currentViewIndex].handleTimer(timeInterval)
-    }
-}
-
-public class MessageView : SKSpriteNode {
-    
-    public var speechTimer : Double = 0
-    
-    public var currentMessageUID : String = ""
-    var currentMessageIndex : Int = 0
-    public var messages : [Message]
-    public var messageNodes : [MessageNode]
-    public var optionNodes : [OptionNode]
-    
-    public var sender : Sender
-    
-    public init(_ s: Sender, parent: SKNode){
-        
-        messages = [Message]()
-        messageNodes = [MessageNode]()
-        optionNodes = [OptionNode]()
-        
-        sender = s
-        
-        super.init(texture: nil, color: UIColor.clear, size: CGSize.zero)
-        
-        self.move(toParent: parent)
-    }
-    
-    required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        //Handle timer
+        if optionNodes.count <= 0 {
+            speechTimer += timeInterval
+            
+            if (currentMessageIndex >= 0 && speechTimer > Double(messages[currentMessageIndex].wordCount) * readingFactor) {
+                
+                spawnNextNode()
+                
+                speechTimer = 0
+            }
+        }
     }
     
     
+    //Spawning Nodes
     public func spawnNextNode(){
         
         if currentMessageUID == "" {
@@ -242,10 +196,13 @@ public class MessageView : SKSpriteNode {
         
         if currentMessageIndex >= 0 {
             
-            let m = MessageNode(m: messages[currentMessageIndex], p: self)
+            let m = MessageNode(messages[currentMessageIndex])
+            m.move(toParent: self)
             
-            print("Message " + m.message.message)
-            m.texture = SKTexture(imageNamed: "whiteMessage")
+            m.position = CGPoint.zero
+            m.background.color = UIColor.blue
+            
+            print("Message: " + m.message.text)
             
             /*
              if m.message.sender != nil {
@@ -256,23 +213,20 @@ public class MessageView : SKSpriteNode {
              */
             
             if m.message.sender != nil {
-                m.colorBlendFactor = 1
-                m.color = UIColor(white: 0.6, alpha: 1)
                 playASound(fileName: "textSent")
             }
             
-            let moveInAnimation = SKAction.move(to: CGPoint.zero, duration: 0.3)
-            
-            m.position = CGPoint(x: m.position.x + (m.message.sender != nil ? -600 : 600), y: m.position.y)
-            
-            m.run(SKAction.group([moveInAnimation]))
-            
+            /*
+             let moveInAnimation = SKAction.move(to: CGPoint.zero, duration: 0.3)
+             
+             m.position = CGPoint(x: m.position.x + (m.message.sender != nil ? -600 : 600), y: m.position.y)
+             
+             m.run(SKAction.group([moveInAnimation]))
+ 
             for l in messageNodes {
-                print(m.size.height)
                 
-                
-                let point = CGPoint(x: l.position.x, y: l.position.y + (m.size.height * 1.2 ) + 40)
-                if(l.position.y + (l.size.height * 0.5) >= ceiling - 200){
+                let point = CGPoint(x: l.position.x, y: l.position.y + (m.background.size.height * 1.2 ) + 40)
+                if(l.position.y + (l.background.size.height * 0.5) >= ceiling - 200){
                     l.removeFromParent()
                     continue
                 }
@@ -289,15 +243,18 @@ public class MessageView : SKSpriteNode {
             if m.message.options != nil && m.message.options!.count > 0 {
                 spawnOptions(messages[currentMessageIndex])
             }
+ */
         }
     }
     
+    //Helper for spawnMessageNode
     func spawnOptions(_ message: Message){
         
         var counter :CGFloat = 0
         
         for o in message.options! {
-            let optionNode = OptionNode(o, p: self)
+            let optionNode = OptionNode(o)
+            optionNode.move(toParent: self)
             
             optionNode.position = CGPoint(x: optionNode.position.x, y: -300 - counter * 120)
             
@@ -307,32 +264,7 @@ public class MessageView : SKSpriteNode {
         }
     }
     
-    func toggleHidden (isHidden : Bool){
-        for o in optionNodes {
-            o.isHidden = isHidden
-        }
-        
-        for m in messageNodes {
-            m.isHidden = isHidden
-        }
-        
-        
-    }
-    
-    func handleTimer(_ time: Double){
-        
-        if optionNodes.count <= 0 {
-            speechTimer += time
-            
-            if (currentMessageIndex >= 0 && speechTimer > Double(messages[currentMessageIndex].wordCount) * readingFactor) {
-                
-                spawnNextNode()
-                
-                speechTimer = 0
-            }
-        }
-    }
-    
+    //Helper for spawnMessageNode
     func findMessageIndex(withUID: String) -> Int{
         
         for i in 0..<messages.count{
