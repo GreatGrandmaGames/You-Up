@@ -11,6 +11,9 @@ import SpriteKit
 
 public class MultiLineLabelNode : SKNode {
     
+    public let extraWidthPercentage : CGFloat = 1.1
+    public let extraHeightPercentage : CGFloat = 1.3
+    
     let background : SKSpriteNode
     var lines : [SKLabelNode]
     
@@ -30,7 +33,8 @@ public class MultiLineLabelNode : SKNode {
             
             var lineString = ""
             
-            while(i < text.count && i < maxLineCharCount * lineNums) {
+            //this is the maxLineCharCount! Adjusrt this to adjust num chars that appear on a single line
+            while(i < text.count && i < 35 * lineNums) {
                 //Find word
                 let startWordIndex = text.index(text.startIndex, offsetBy: i)
                 var iAsIndex = startWordIndex
@@ -71,14 +75,7 @@ public class MultiLineLabelNode : SKNode {
             totalHeight += l.frame.height
         }
         
-        self.background = SKSpriteNode(texture: backgroundTexture, color: backgroundColor, size: CGSize(width: maxWidth * 1.1, height: totalHeight * 1.2))
-        
-        
-        self.background.position = CGPoint(x: self.background.position.x - (self.lines[0].frame.width * 0.05), y: self.lines[self.lines.count / 2].position.y + (self.lines[0].frame.height * 0.1))
-    
-        if(self.lines.count % 2 == 0){
-            self.background.position = CGPoint(x: self.background.position.x, y: self.background.position.y + (self.lines[0].frame.size.height) / 2)
-        }
+        self.background = SKSpriteNode(texture: backgroundTexture, color: backgroundColor, size: CGSize(width: maxWidth * extraWidthPercentage, height: totalHeight * extraHeightPercentage))
         
         self.background.colorBlendFactor = 1
         self.background.zPosition = -1

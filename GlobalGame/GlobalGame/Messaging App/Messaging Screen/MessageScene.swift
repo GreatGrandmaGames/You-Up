@@ -24,7 +24,13 @@ class MessageScene: SKScene {
     public var messageNodes : [MessageNode] = [MessageNode]() //this is actual nodes in the scene
     public var optionNodes : [OptionNode] = [OptionNode]()
     
-    public let sender : Sender
+    public var sender : Sender
+    
+    public init(_ sender: Sender) {
+        self.sender = sender
+        
+        super.init()
+    }
     
     required init?(coder aDecoder: NSCoder) {
         
@@ -114,16 +120,25 @@ class MessageScene: SKScene {
         let positionInScene = touch.location(in: self)
         let touchedNode = self.atPoint(positionInScene)
         
-        if touchedNode.name == "Option Node"{
-            if let optionNode = touchedNode as? OptionNode {
-                
-                spawnMessageNode(withUID: optionNode.option.responseUID)
-                
-                self.removeChildren(in: optionNodes)
+        if let labelNode = touchedNode as? SKLabelNode {
+            if let optParent = labelNode.parent as? OptionNode {
+                onOption(opt: optParent.option)
             }
-        } 
+        } else if let spriteNode = touchedNode as? SKSpriteNode {
+            if let optParent = spriteNode.parent as? OptionNode {
+                onOption(opt: optParent.option)
+            }
+        }
     }
-
+    
+    //Helper for touches
+    func onOption(opt : Option){
+        
+        spawnMessageNode(withUID: opt.responseUID)
+        
+        self.removeChildren(in: optionNodes)
+    }
+    
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
     }
     

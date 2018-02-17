@@ -9,8 +9,6 @@
 import Foundation
 import SpriteKit
 
-public let maxLineCharCount = 35
-
 public class Message : NSObject {
     
     let text : String
