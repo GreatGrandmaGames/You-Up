@@ -11,6 +11,8 @@ import SpriteKit
 import GameplayKit
 
 class GameViewController: UIViewController {
+    
+    var sender : Sender?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +22,16 @@ class GameViewController: UIViewController {
             if let scene = SKScene(fileNamed: "MessageScene") {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
+                
+                if let messagingScene = scene as? MessageScene {
+                    if sender != nil {
+                        messagingScene.sender = sender!
+                    } else {
+                        fatalError("Transferring to Message Scene without valid sender")
+                    }
+                } else {
+                    fatalError("Scene is not messaging scene")
+                }
                 
                 // Present the scene
                 view.presentScene(scene)
@@ -33,7 +45,7 @@ class GameViewController: UIViewController {
     }
 
     override var shouldAutorotate: Bool {
-        return true
+        return false
     }
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {

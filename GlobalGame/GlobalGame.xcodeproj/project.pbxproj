@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17736D822038C2710016357C /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17736D812038C2710016357C /* Option.swift */; };
+		17736D842038C28D0016357C /* Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17736D832038C28D0016357C /* Sender.swift */; };
+		17736D862038C2B50016357C /* MessageNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17736D852038C2B50016357C /* MessageNode.swift */; };
+		17736D882038C2D30016357C /* OptionNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17736D872038C2D30016357C /* OptionNode.swift */; };
+		17736D8C2038C3790016357C /* MultiLineLabelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17736D8B2038C3790016357C /* MultiLineLabelNode.swift */; };
+		17736D8F2038ED370016357C /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17736D8E2038ED370016357C /* ContactsViewController.swift */; };
+		17736D912038EE940016357C /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17736D902038EE940016357C /* GameManager.swift */; };
+		17EAF96720378E280079CAFD /* test1.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 17EAF96620378E280079CAFD /* test1.tsv */; };
+		17EAF96920378E970079CAFD /* textSent.wav in Resources */ = {isa = PBXBuildFile; fileRef = 17EAF96820378E970079CAFD /* textSent.wav */; };
 		83BA0403201E1B1300F7ED27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BA0402201E1B1300F7ED27 /* AppDelegate.swift */; };
 		83BA0405201E1B1300F7ED27 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 83BA0404201E1B1300F7ED27 /* GameScene.sks */; };
 		83BA0407201E1B1300F7ED27 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 83BA0406201E1B1300F7ED27 /* Actions.sks */; };
@@ -23,8 +32,6 @@
 		83BA0453201E28FB00F7ED27 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BA0452201E28FB00F7ED27 /* Message.swift */; };
 		83BA0459201E305200F7ED27 /* notification.wav in Resources */ = {isa = PBXBuildFile; fileRef = 83BA0458201E305100F7ED27 /* notification.wav */; };
 		83BA045B201E30BB00F7ED27 /* audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BA045A201E30BB00F7ED27 /* audio.swift */; };
-		83BA0463201E480E00F7ED27 /* holder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BA0462201E480E00F7ED27 /* holder.swift */; };
-		83BA0465201E49DA00F7ED27 /* SCeneHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BA0464201E49DA00F7ED27 /* SCeneHolder.swift */; };
 		83BA0469201E5D8900F7ED27 /* Menu.sks in Resources */ = {isa = PBXBuildFile; fileRef = 83BA0468201E5D8900F7ED27 /* Menu.sks */; };
 		83BA046B201E5D9700F7ED27 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BA046A201E5D9700F7ED27 /* Menu.swift */; };
 		83BA0489201E725E00F7ED27 /* Credits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BA0488201E725E00F7ED27 /* Credits.swift */; };
@@ -48,6 +55,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		17736D812038C2710016357C /* Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
+		17736D832038C28D0016357C /* Sender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sender.swift; sourceTree = "<group>"; };
+		17736D852038C2B50016357C /* MessageNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageNode.swift; sourceTree = "<group>"; };
+		17736D872038C2D30016357C /* OptionNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionNode.swift; sourceTree = "<group>"; };
+		17736D8B2038C3790016357C /* MultiLineLabelNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiLineLabelNode.swift; sourceTree = "<group>"; };
+		17736D8E2038ED370016357C /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		17736D902038EE940016357C /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
+		17EAF96620378E280079CAFD /* test1.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test1.tsv; sourceTree = "<group>"; };
+		17EAF96820378E970079CAFD /* textSent.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = textSent.wav; sourceTree = "<group>"; };
 		83BA03FF201E1B1300F7ED27 /* GlobalGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GlobalGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83BA0402201E1B1300F7ED27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83BA0404201E1B1300F7ED27 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -70,8 +86,6 @@
 		83BA0452201E28FB00F7ED27 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		83BA0458201E305100F7ED27 /* notification.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = notification.wav; sourceTree = "<group>"; };
 		83BA045A201E30BB00F7ED27 /* audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = audio.swift; sourceTree = "<group>"; };
-		83BA0462201E480E00F7ED27 /* holder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = holder.swift; sourceTree = "<group>"; };
-		83BA0464201E49DA00F7ED27 /* SCeneHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCeneHolder.swift; sourceTree = "<group>"; };
 		83BA0468201E5D8900F7ED27 /* Menu.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Menu.sks; sourceTree = "<group>"; };
 		83BA046A201E5D9700F7ED27 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		83BA0488201E725E00F7ED27 /* Credits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credits.swift; sourceTree = "<group>"; };
@@ -112,14 +126,20 @@
 			path = "Cinder App";
 			sourceTree = "<group>";
 		};
-		170ECC81202FA4220017D9F5 /* Messaging App */ = {
+		170ECC81202FA4220017D9F5 /* Messaging Screen */ = {
 			isa = PBXGroup;
 			children = (
+				83BA040A201E1B1300F7ED27 /* GameViewController.swift */,
 				83BA044E201E283600F7ED27 /* MessageScene.sks */,
 				83BA0452201E28FB00F7ED27 /* Message.swift */,
+				17736D872038C2D30016357C /* OptionNode.swift */,
+				17736D852038C2B50016357C /* MessageNode.swift */,
+				17736D8B2038C3790016357C /* MultiLineLabelNode.swift */,
+				17736D832038C28D0016357C /* Sender.swift */,
+				17736D812038C2710016357C /* Option.swift */,
 				83BA0450201E285600F7ED27 /* MessageScene.swift */,
 			);
-			path = "Messaging App";
+			path = "Messaging Screen";
 			sourceTree = "<group>";
 		};
 		170ECC82202FA47B0017D9F5 /* Main Menu */ = {
@@ -131,10 +151,28 @@
 			path = "Main Menu";
 			sourceTree = "<group>";
 		};
+		17736D8D2038ED090016357C /* Messaging App */ = {
+			isa = PBXGroup;
+			children = (
+				170ECC81202FA4220017D9F5 /* Messaging Screen */,
+				17736D8E2038ED370016357C /* ContactsViewController.swift */,
+			);
+			path = "Messaging App";
+			sourceTree = "<group>";
+		};
+		17EAF96A20378E9F0079CAFD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				83BA0458201E305100F7ED27 /* notification.wav */,
+				17EAF96820378E970079CAFD /* textSent.wav */,
+				17EAF96620378E280079CAFD /* test1.tsv */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		83BA03F6201E1B1300F7ED27 = {
 			isa = PBXGroup;
 			children = (
-				83BA0488201E725E00F7ED27 /* Credits.swift */,
 				83BA0401201E1B1300F7ED27 /* GlobalGame */,
 				83BA041C201E1B1400F7ED27 /* GlobalGameTests */,
 				83BA0427201E1B1400F7ED27 /* GlobalGameUITests */,
@@ -155,18 +193,17 @@
 		83BA0401201E1B1300F7ED27 /* GlobalGame */ = {
 			isa = PBXGroup;
 			children = (
+				17EAF96A20378E9F0079CAFD /* Resources */,
+				83BA0488201E725E00F7ED27 /* Credits.swift */,
 				170ECC82202FA47B0017D9F5 /* Main Menu */,
 				83BA0402201E1B1300F7ED27 /* AppDelegate.swift */,
-				83BA040A201E1B1300F7ED27 /* GameViewController.swift */,
 				83BA0406201E1B1300F7ED27 /* Actions.sks */,
 				83BA045A201E30BB00F7ED27 /* audio.swift */,
-				170ECC81202FA4220017D9F5 /* Messaging App */,
-				83BA0464201E49DA00F7ED27 /* SCeneHolder.swift */,
+				17736D902038EE940016357C /* GameManager.swift */,
+				17736D8D2038ED090016357C /* Messaging App */,
 				170ECC80202FA3800017D9F5 /* Cinder App */,
-				83BA0462201E480E00F7ED27 /* holder.swift */,
 				83BA040C201E1B1300F7ED27 /* Main.storyboard */,
 				83BA040F201E1B1300F7ED27 /* Assets.xcassets */,
-				83BA0458201E305100F7ED27 /* notification.wav */,
 				83BA0411201E1B1300F7ED27 /* LaunchScreen.storyboard */,
 				83BA0414201E1B1300F7ED27 /* Info.plist */,
 			);
@@ -306,6 +343,8 @@
 				83BA0413201E1B1300F7ED27 /* LaunchScreen.storyboard in Resources */,
 				83BA0407201E1B1300F7ED27 /* Actions.sks in Resources */,
 				83BA0459201E305200F7ED27 /* notification.wav in Resources */,
+				17EAF96720378E280079CAFD /* test1.tsv in Resources */,
+				17EAF96920378E970079CAFD /* textSent.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,16 +370,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				83BA0409201E1B1300F7ED27 /* GameScene.swift in Sources */,
+				17736D912038EE940016357C /* GameManager.swift in Sources */,
 				83BA040B201E1B1300F7ED27 /* GameViewController.swift in Sources */,
-				83BA0465201E49DA00F7ED27 /* SCeneHolder.swift in Sources */,
+				17736D822038C2710016357C /* Option.swift in Sources */,
 				83BA0437201E1B2500F7ED27 /* boy.swift in Sources */,
 				83BA046B201E5D9700F7ED27 /* Menu.swift in Sources */,
+				17736D842038C28D0016357C /* Sender.swift in Sources */,
 				83BA0489201E725E00F7ED27 /* Credits.swift in Sources */,
+				17736D8C2038C3790016357C /* MultiLineLabelNode.swift in Sources */,
+				17736D862038C2B50016357C /* MessageNode.swift in Sources */,
 				83BA0453201E28FB00F7ED27 /* Message.swift in Sources */,
 				83BA045B201E30BB00F7ED27 /* audio.swift in Sources */,
-				83BA0463201E480E00F7ED27 /* holder.swift in Sources */,
 				83BA0403201E1B1300F7ED27 /* AppDelegate.swift in Sources */,
+				17736D882038C2D30016357C /* OptionNode.swift in Sources */,
 				83BA0451201E285600F7ED27 /* MessageScene.swift in Sources */,
+				17736D8F2038ED370016357C /* ContactsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
