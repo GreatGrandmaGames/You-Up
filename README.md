@@ -24,7 +24,3 @@ Target Platforms: `iPhone 6 (+)`
 1. Nina Demirjian - Programming / Art / Story
 2. Elliot Winch - Programming / Art
 3. Carlos Michael Rodriguez - Programming / Story
-
-## License
-
-We own this bitch
