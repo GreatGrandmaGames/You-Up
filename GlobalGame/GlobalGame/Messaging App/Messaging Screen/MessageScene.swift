@@ -35,8 +35,8 @@ class MessageScene: SKScene {
     required init?(coder aDecoder: NSCoder) {
         
         //init your senders manually for now
-        sender = Sender(name: "Jason", color: UIColor.blue)
-        
+        sender = Sender(name: "Jason", color: UIColor.blue, knownFrom: .Wink)
+
         super.init(coder: aDecoder)
     }
     

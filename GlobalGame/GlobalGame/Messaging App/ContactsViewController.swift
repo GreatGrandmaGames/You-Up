@@ -35,6 +35,11 @@ class ContactsViewController: UITableViewController {
         return loadedCharacters.count
     }
     
+    //9a added
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        return 90
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) ->
         UITableViewCell {
@@ -73,6 +78,8 @@ class ContactsViewController: UITableViewController {
 class ContactCell : UITableViewCell {
     
     @IBOutlet weak var name: UITextField!
+    @IBOutlet weak var profilePic: UIImageView!
+    @IBOutlet weak var winkLogo: UIImageView!
     
     var sender : Sender?
     //let icon

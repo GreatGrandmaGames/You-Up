@@ -16,6 +16,6 @@ public class GameManager : NSObject {
     //temp
     public override init() {
         
-        senders.append(Sender(name: "Jason", color: UIColor.blue))
+        senders.append(Sender(name: "Jason", color: UIColor.blue, knownFrom: .Wink))
     }
 }
