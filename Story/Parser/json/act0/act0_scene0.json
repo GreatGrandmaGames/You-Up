@@ -1,0 +1,1206 @@
+{
+  "passages": [
+    {
+      "text": "#friendA#\nHey, %player ! I haven't heard from you in a while.\n[[How are you?]]",
+      "links": [
+        {
+          "name": "How are you?",
+          "link": "How are you?",
+          "pid": "2"
+        }
+      ],
+      "name": "Hey, %player! I haven't heard from you in a while.",
+      "pid": "1",
+      "position": {
+        "x": "412",
+        "y": "200"
+      }
+    },
+    {
+      "text": "#friendA#\nHow are you!?\n[[Good!]]\n[[Great!]]",
+      "links": [
+        {
+          "name": "Good!",
+          "link": "Good!",
+          "pid": "3"
+        },
+        {
+          "name": "Great!",
+          "link": "Great!",
+          "pid": "10"
+        }
+      ],
+      "name": "How are you?",
+      "pid": "2",
+      "position": {
+        "x": "412",
+        "y": "350"
+      }
+    },
+    {
+      "text": "#player#\nI'm pretty good! Things have been weird lately though...\n[[Honestly, I'm tired of boys.]]",
+      "links": [
+        {
+          "name": "Honestly, I'm tired of boys.",
+          "link": "Honestly, I'm tired of boys.",
+          "pid": "4"
+        }
+      ],
+      "name": "Good!",
+      "pid": "3",
+      "position": {
+        "x": "262",
+        "y": "500"
+      }
+    },
+    {
+      "text": "#player#\nhonestly, i'm tired of boys, lol.\n[[wbu?]]",
+      "links": [
+        {
+          "name": "wbu?",
+          "link": "wbu?",
+          "pid": "5"
+        }
+      ],
+      "name": "Honestly, I'm tired of boys.",
+      "pid": "4",
+      "position": {
+        "x": "262",
+        "y": "650"
+      }
+    },
+    {
+      "text": "#player#\nwbu? how you been?\n[[Ugh, boys! Tell me about it...]]",
+      "links": [
+        {
+          "name": "Ugh, boys! Tell me about it...",
+          "link": "Ugh, boys! Tell me about it...",
+          "pid": "6"
+        }
+      ],
+      "name": "wbu?",
+      "pid": "5",
+      "position": {
+        "x": "262",
+        "y": "800"
+      }
+    },
+    {
+      "text": "#friendA#\nUgh, boys! Tell me about it.\n[[I've just been swiping.]]",
+      "links": [
+        {
+          "name": "I've just been swiping.",
+          "link": "I've just been swiping.",
+          "pid": "7"
+        }
+      ],
+      "name": "Ugh, boys! Tell me about it...",
+      "pid": "6",
+      "position": {
+        "x": "262",
+        "y": "950"
+      }
+    },
+    {
+      "text": "#friendA#\nI've just been sitting here swiping on Wink, lol. It's so much better to try to meet people. No more commitment, you know?\n[[Yeah, I agree!]]\n[[Hm... not for me]]",
+      "links": [
+        {
+          "name": "Yeah, I agree!",
+          "link": "Yeah, I agree!",
+          "pid": "8"
+        },
+        {
+          "name": "Hm... not for me",
+          "link": "Hm... not for me",
+          "pid": "9"
+        }
+      ],
+      "name": "I've just been swiping.",
+      "pid": "7",
+      "position": {
+        "x": "818",
+        "y": "183"
+      }
+    },
+    {
+      "text": "#player#\nYeah, I agree ive always wanted to try it\n[[lol]]",
+      "links": [
+        {
+          "name": "lol",
+          "link": "lol",
+          "pid": "13"
+        }
+      ],
+      "name": "Yeah, I agree!",
+      "pid": "8",
+      "position": {
+        "x": "743",
+        "y": "333"
+      }
+    },
+    {
+      "text": "#player#\nHm, I don't know. it doesn't seem like the thing for me\n[[aren't the guys awful]]",
+      "links": [
+        {
+          "name": "aren't the guys awful",
+          "link": "aren't the guys awful",
+          "pid": "16"
+        }
+      ],
+      "name": "Hm... not for me",
+      "pid": "9",
+      "position": {
+        "x": "893",
+        "y": "333"
+      }
+    },
+    {
+      "text": "#player#\nI'm great! Finally coming into my own in college.\n[[Meeting a lot of good people]]",
+      "links": [
+        {
+          "name": "Meeting a lot of good people",
+          "link": "Meeting a lot of good people",
+          "pid": "11"
+        }
+      ],
+      "name": "Great!",
+      "pid": "10",
+      "position": {
+        "x": "522",
+        "y": "500"
+      }
+    },
+    {
+      "text": "#player#\ni'm meeting a lot of good people, and things are going well!\n[[what's going on in your life?]]",
+      "links": [
+        {
+          "name": "what's going on in your life?",
+          "link": "what's going on in your life?",
+          "pid": "12"
+        }
+      ],
+      "name": "Meeting a lot of good people",
+      "pid": "11",
+      "position": {
+        "x": "522",
+        "y": "650"
+      }
+    },
+    {
+      "text": "#player#\nwhat's going on in your life?\n[[I've just been swiping.]]",
+      "links": [
+        {
+          "name": "I've just been swiping.",
+          "link": "I've just been swiping.",
+          "pid": "7"
+        }
+      ],
+      "name": "what's going on in your life?",
+      "pid": "12",
+      "position": {
+        "x": "522",
+        "y": "800"
+      }
+    },
+    {
+      "text": "#player#\nlol\n[[but i've always been scared]]",
+      "links": [
+        {
+          "name": "but i've always been scared",
+          "link": "but i've always been scared",
+          "pid": "14"
+        }
+      ],
+      "name": "lol",
+      "pid": "13",
+      "position": {
+        "x": "743",
+        "y": "483"
+      }
+    },
+    {
+      "text": "#player#\nbut i've always been a little nervous to use it. you've had a good experience??\n[[oh hell yeah]]",
+      "links": [
+        {
+          "name": "oh hell yeah",
+          "link": "oh hell yeah",
+          "pid": "15"
+        }
+      ],
+      "name": "but i've always been scared",
+      "pid": "14",
+      "position": {
+        "x": "743",
+        "y": "633"
+      }
+    },
+    {
+      "text": "#friendA#\noh hell yeah! wink is the best! You can just have casual hookups and never have to worry about clinginess too soon.\n[[omg please make one!]]",
+      "links": [
+        {
+          "name": "omg please make one!",
+          "link": "omg please make one!",
+          "pid": "20"
+        }
+      ],
+      "name": "oh hell yeah",
+      "pid": "15",
+      "position": {
+        "x": "743",
+        "y": "783"
+      }
+    },
+    {
+      "text": "#player#\na lot of the guys on there are creeps right?\n[[are they creeps?]]",
+      "links": [
+        {
+          "name": "are they creeps?",
+          "link": "are they creeps?",
+          "pid": "17"
+        }
+      ],
+      "name": "aren't the guys awful",
+      "pid": "16",
+      "position": {
+        "x": "893",
+        "y": "483"
+      }
+    },
+    {
+      "text": "#friendA#\nwell there's always gonna be creeps, but they're so easy to avoid\n[[just ghost them]]",
+      "links": [
+        {
+          "name": "just ghost them",
+          "link": "just ghost them",
+          "pid": "18"
+        }
+      ],
+      "name": "are they creeps?",
+      "pid": "17",
+      "position": {
+        "x": "893",
+        "y": "633"
+      }
+    },
+    {
+      "text": "#friendA#\nyou just ghost them and they get the hint \\U1F923 \\U1F923\n[[you should try it!]]\n",
+      "links": [
+        {
+          "name": "you should try it!",
+          "link": "you should try it!",
+          "pid": "19"
+        }
+      ],
+      "name": "just ghost them",
+      "pid": "18",
+      "position": {
+        "x": "893",
+        "y": "783"
+      }
+    },
+    {
+      "text": "#friendA#\nthe creeps come and go\n[[i can set yours up]]",
+      "links": [
+        {
+          "name": "i can set yours up",
+          "link": "i can set yours up",
+          "pid": "21"
+        }
+      ],
+      "name": "you should try it!",
+      "pid": "19",
+      "position": {
+        "x": "893",
+        "y": "933"
+      }
+    },
+    {
+      "text": "#friendA#\nomg please make one! you'd get so many likes, we both know you're a 10\n[[i can set yours up]]",
+      "links": [
+        {
+          "name": "i can set yours up",
+          "link": "i can set yours up",
+          "pid": "21"
+        }
+      ],
+      "name": "omg please make one!",
+      "pid": "20",
+      "position": {
+        "x": "743",
+        "y": "933"
+      }
+    },
+    {
+      "text": "#friendA#\nI can set yours up if you want!!\n[[sure!]]\n[[hmm...]]",
+      "links": [
+        {
+          "name": "sure!",
+          "link": "sure!",
+          "pid": "22"
+        },
+        {
+          "name": "hmm...",
+          "link": "hmm...",
+          "pid": "23"
+        }
+      ],
+      "name": "i can set yours up",
+      "pid": "21",
+      "position": {
+        "x": "1172",
+        "y": "176"
+      }
+    },
+    {
+      "text": "#player#\nSure!! omg i'm nervous, how does this work?!\n[[It's ok, I got you!]]",
+      "links": [
+        {
+          "name": "It's ok, I got you!",
+          "link": "It's ok, I got you!",
+          "pid": "24"
+        }
+      ],
+      "name": "sure!",
+      "pid": "22",
+      "position": {
+        "x": "1097",
+        "y": "326"
+      }
+    },
+    {
+      "text": "#player#\nI'm honestly not too sure\n[[you're the only one]]",
+      "links": [
+        {
+          "name": "you're the only one",
+          "link": "you're the only one",
+          "pid": "25"
+        }
+      ],
+      "name": "hmm...",
+      "pid": "23",
+      "position": {
+        "x": "1247",
+        "y": "326"
+      }
+    },
+    {
+      "text": "#friendA#\nIt's ok, I got you!\n[[okay perfect!]] ",
+      "links": [
+        {
+          "name": "okay perfect!",
+          "link": "okay perfect!",
+          "pid": "34"
+        }
+      ],
+      "name": "It's ok, I got you!",
+      "pid": "24",
+      "position": {
+        "x": "1097",
+        "y": "476"
+      }
+    },
+    {
+      "text": "#player#\nyou're the only one I've heard that seems to be having a good time\n[[frown]]",
+      "links": [
+        {
+          "name": "frown",
+          "link": "frown",
+          "pid": "26"
+        }
+      ],
+      "name": "you're the only one",
+      "pid": "25",
+      "position": {
+        "x": "1247",
+        "y": "476"
+      }
+    },
+    {
+      "text": "#friendA#\nugh \\U1F62B\n[[ugh, fine!!]]\n[[why so sad?!?]]",
+      "links": [
+        {
+          "name": "ugh, fine!!",
+          "link": "ugh, fine!!",
+          "pid": "27"
+        },
+        {
+          "name": "why so sad?!?",
+          "link": "why so sad?!?",
+          "pid": "28"
+        }
+      ],
+      "name": "frown",
+      "pid": "26",
+      "position": {
+        "x": "1247",
+        "y": "626"
+      }
+    },
+    {
+      "text": "#player#\nugh, fine!!\n[[okay perfect!]]",
+      "links": [
+        {
+          "name": "okay perfect!",
+          "link": "okay perfect!",
+          "pid": "34"
+        }
+      ],
+      "name": "ugh, fine!!",
+      "pid": "27",
+      "position": {
+        "x": "1172",
+        "y": "776"
+      }
+    },
+    {
+      "text": "#player#\nwhy so sad??\n[[im kind of shy!]]",
+      "links": [
+        {
+          "name": "im kind of shy!",
+          "link": "im kind of shy!",
+          "pid": "29"
+        }
+      ],
+      "name": "why so sad?!?",
+      "pid": "28",
+      "position": {
+        "x": "1322",
+        "y": "776"
+      }
+    },
+    {
+      "text": "#player#\nI'm kinda shy, and what if I don't wanna meet up with them?\n[[it'll be fine]]",
+      "links": [
+        {
+          "name": "it'll be fine",
+          "link": "it'll be fine",
+          "pid": "30"
+        }
+      ],
+      "name": "im kind of shy!",
+      "pid": "29",
+      "position": {
+        "x": "1322",
+        "y": "926"
+      }
+    },
+    {
+      "text": "#friendA#\nit'll be fine! You're hot as a flaming hot cheeto\n[[no but really]]",
+      "links": [
+        {
+          "name": "no but really",
+          "link": "no but really",
+          "pid": "31"
+        }
+      ],
+      "name": "it'll be fine",
+      "pid": "30",
+      "position": {
+        "x": "1322",
+        "y": "1076"
+      }
+    },
+    {
+      "text": "#friendA#\nno but really, you'll be fine. I'll walk you through it! i think it'd be good for you, have some fun in college... It'll be your only time really to be this open and free. What do you say?\n[[fine, i'll try it!]]\n[[Okay, but i choose!]]",
+      "links": [
+        {
+          "name": "fine, i'll try it!",
+          "link": "fine, i'll try it!",
+          "pid": "32"
+        },
+        {
+          "name": "Okay, but i choose!",
+          "link": "Okay, but i choose!",
+          "pid": "33"
+        }
+      ],
+      "name": "no but really",
+      "pid": "31",
+      "position": {
+        "x": "1322",
+        "y": "1226"
+      }
+    },
+    {
+      "text": "#player#\nfine! You wore me down... what do I have to do?\n[[okay perfect!]] ",
+      "links": [
+        {
+          "name": "okay perfect!",
+          "link": "okay perfect!",
+          "pid": "34"
+        }
+      ],
+      "name": "fine, i'll try it!",
+      "pid": "32",
+      "position": {
+        "x": "1473",
+        "y": "982"
+      }
+    },
+    {
+      "text": "#player#\nfine, but i get to choose what goes on my profile. Deal?\n[[okay perfect!]] ",
+      "links": [
+        {
+          "name": "okay perfect!",
+          "link": "okay perfect!",
+          "pid": "34"
+        }
+      ],
+      "name": "Okay, but i choose!",
+      "pid": "33",
+      "position": {
+        "x": "1623",
+        "y": "982"
+      }
+    },
+    {
+      "text": "#friendA#\nokay, perfect! I can just set it up for you!\n[[bio]]",
+      "links": [
+        {
+          "name": "bio",
+          "link": "bio",
+          "pid": "35"
+        }
+      ],
+      "name": "okay perfect!",
+      "pid": "34",
+      "position": {
+        "x": "2075",
+        "y": "200"
+      }
+    },
+    {
+      "text": "#friendA#\nWhat do you want your bio to portray you?? what are you lookin for?\n[[flirty]]\n[[normal]]\n[[funny]]",
+      "links": [
+        {
+          "name": "flirty",
+          "link": "flirty",
+          "pid": "36"
+        },
+        {
+          "name": "normal",
+          "link": "normal",
+          "pid": "37"
+        },
+        {
+          "name": "funny",
+          "link": "funny",
+          "pid": "38"
+        }
+      ],
+      "name": "bio",
+      "pid": "35",
+      "position": {
+        "x": "2074",
+        "y": "349"
+      }
+    },
+    {
+      "text": "#player#\nscrew it, make it flirty. show the world how hot i am\n[[hahaha]]",
+      "links": [
+        {
+          "name": "hahaha",
+          "link": "hahaha",
+          "pid": "39"
+        }
+      ],
+      "name": "flirty",
+      "pid": "36",
+      "position": {
+        "x": "1946",
+        "y": "516"
+      },
+      "tags": [
+        "flirty-bio"
+      ]
+    },
+    {
+      "text": "#player#\neh, just do something normal i guess!\n[[normal is good]]",
+      "links": [
+        {
+          "name": "normal is good",
+          "link": "normal is good",
+          "pid": "42"
+        }
+      ],
+      "name": "normal",
+      "pid": "37",
+      "position": {
+        "x": "2077",
+        "y": "516"
+      }
+    },
+    {
+      "text": "#player#\nshow the world how im a catch\n[[comedy]]",
+      "links": [
+        {
+          "name": "comedy",
+          "link": "comedy",
+          "pid": "43"
+        }
+      ],
+      "name": "funny",
+      "pid": "38",
+      "position": {
+        "x": "2207",
+        "y": "514"
+      }
+    },
+    {
+      "text": "#player#\nhahaha\n[[so many matches]]",
+      "links": [
+        {
+          "name": "so many matches",
+          "link": "so many matches",
+          "pid": "40"
+        }
+      ],
+      "name": "hahaha",
+      "pid": "39",
+      "position": {
+        "x": "1950",
+        "y": "650"
+      }
+    },
+    {
+      "text": "#friendA#\ngirl you're gonna get so many matches, i'll make it nice and hot. I'm looking through your photo feed to get some hot pics too, don't worry\n[[interests]]",
+      "links": [
+        {
+          "name": "interests",
+          "link": "interests",
+          "pid": "41"
+        }
+      ],
+      "name": "so many matches",
+      "pid": "40",
+      "position": {
+        "x": "1952",
+        "y": "796"
+      }
+    },
+    {
+      "text": "#friendA#\nwhat interests do u think u want highlhghted?\n[[highlighted]]",
+      "links": [
+        {
+          "name": "highlighted",
+          "link": "highlighted",
+          "pid": "50"
+        }
+      ],
+      "name": "interests",
+      "pid": "41",
+      "position": {
+        "x": "2826",
+        "y": "151"
+      }
+    },
+    {
+      "text": "#friendA#\nnormal is good! Lol, i'm gonna find some pics from your photo feed. i'll portray you as cute and down for a nice casual time\n[[so the opposite]]",
+      "links": [
+        {
+          "name": "so the opposite",
+          "link": "so the opposite",
+          "pid": "46"
+        }
+      ],
+      "name": "normal is good",
+      "pid": "42",
+      "position": {
+        "x": "2075",
+        "y": "648"
+      }
+    },
+    {
+      "text": "#player#\nyou know im the funniest persof on the planet\n[[correction]]",
+      "links": [
+        {
+          "name": "correction",
+          "link": "correction",
+          "pid": "44"
+        }
+      ],
+      "name": "comedy",
+      "pid": "43",
+      "position": {
+        "x": "2210",
+        "y": "649"
+      }
+    },
+    {
+      "text": "#player#\n**person\n[[make it funny]]",
+      "links": [
+        {
+          "name": "make it funny",
+          "link": "make it funny",
+          "pid": "45"
+        }
+      ],
+      "name": "correction",
+      "pid": "44",
+      "position": {
+        "x": "2212",
+        "y": "781"
+      }
+    },
+    {
+      "text": "#player#\nugh. make me funny. get the pic of me with the cow!!!\n[[moo bitch]]",
+      "links": [
+        {
+          "name": "moo bitch",
+          "link": "moo bitch",
+          "pid": "51"
+        }
+      ],
+      "name": "make it funny",
+      "pid": "45",
+      "position": {
+        "x": "2212",
+        "y": "931"
+      }
+    },
+    {
+      "text": "#player#\nso, exactly the opposite\n[[joking]]",
+      "links": [
+        {
+          "name": "joking",
+          "link": "joking",
+          "pid": "47"
+        }
+      ],
+      "name": "so the opposite",
+      "pid": "46",
+      "position": {
+        "x": "2075",
+        "y": "798"
+      }
+    },
+    {
+      "text": "#player#\nlol, im joking.\n[[we all know]]",
+      "links": [
+        {
+          "name": "we all know",
+          "link": "we all know",
+          "pid": "48"
+        }
+      ],
+      "name": "joking",
+      "pid": "47",
+      "position": {
+        "x": "2075",
+        "y": "948"
+      }
+    },
+    {
+      "text": "#player#\nwe all know im a gd 10\n[[interests laugh]]",
+      "links": [
+        {
+          "name": "interests laugh",
+          "link": "interests laugh",
+          "pid": "49"
+        }
+      ],
+      "name": "we all know",
+      "pid": "48",
+      "position": {
+        "x": "2075",
+        "y": "1098"
+      }
+    },
+    {
+      "text": "#friendA#\nhahahaha never change, %player. \n[[interests]]",
+      "links": [
+        {
+          "name": "interests",
+          "link": "interests",
+          "pid": "41"
+        }
+      ],
+      "name": "interests laugh",
+      "pid": "49",
+      "position": {
+        "x": "2080",
+        "y": "1232"
+      }
+    },
+    {
+      "text": "#friendA#\nhighlighted** ? please don't do computers... \\U1F606\n[[computers]]\n[[piano]]\n[[im shy]]",
+      "links": [
+        {
+          "name": "computers",
+          "link": "computers",
+          "pid": "54"
+        },
+        {
+          "name": "piano",
+          "link": "piano",
+          "pid": "55"
+        },
+        {
+          "name": "im shy",
+          "link": "im shy",
+          "pid": "66"
+        }
+      ],
+      "name": "highlighted",
+      "pid": "50",
+      "position": {
+        "x": "2827",
+        "y": "276"
+      }
+    },
+    {
+      "text": "#friendA#\n\"moo bitch get out the way?\"\n[[legendary]]",
+      "links": [
+        {
+          "name": "legendary",
+          "link": "legendary",
+          "pid": "52"
+        }
+      ],
+      "name": "moo bitch",
+      "pid": "51",
+      "position": {
+        "x": "2212",
+        "y": "1081"
+      }
+    },
+    {
+      "text": "#friendA#\nlegendary caption!!!! lmao\n[[okay]]",
+      "links": [
+        {
+          "name": "okay",
+          "link": "okay",
+          "pid": "53"
+        }
+      ],
+      "name": "legendary",
+      "pid": "52",
+      "position": {
+        "x": "2212",
+        "y": "1231"
+      }
+    },
+    {
+      "text": "#friendA#\nokay i got you. now let's make your bio interestin\n[[interests]]",
+      "links": [
+        {
+          "name": "interests",
+          "link": "interests",
+          "pid": "41"
+        }
+      ],
+      "name": "okay",
+      "pid": "53",
+      "position": {
+        "x": "2212",
+        "y": "1381"
+      }
+    },
+    {
+      "text": "#player#\nhell yeah. get me a nerd boi\n[[comp sci]]",
+      "links": [
+        {
+          "name": "comp sci",
+          "link": "comp sci",
+          "pid": "56"
+        }
+      ],
+      "name": "computers",
+      "pid": "54",
+      "position": {
+        "x": "2702",
+        "y": "401"
+      },
+      "tags": [
+        "computerBio"
+      ]
+    },
+    {
+      "text": "#player#\nhahaha, fair enough. talk about music! i love playing piano\n[[i wonder]]",
+      "links": [
+        {
+          "name": "i wonder",
+          "link": "i wonder",
+          "pid": "63"
+        }
+      ],
+      "name": "piano",
+      "pid": "55",
+      "position": {
+        "x": "2826",
+        "y": "400"
+      },
+      "tags": [
+        "pianoBio"
+      ]
+    },
+    {
+      "text": "#player#\ni'm in comp sci, how can my entire profile not be about computers\n[[refuse]]",
+      "links": [
+        {
+          "name": "refuse",
+          "link": "refuse",
+          "pid": "57"
+        }
+      ],
+      "name": "comp sci",
+      "pid": "56",
+      "position": {
+        "x": "2702",
+        "y": "551"
+      }
+    },
+    {
+      "text": "#friendA#\nLMAO %playerCaps NO!!! i refuse to be responsible for this prof if youre tryna put all this nerd sht in\n[[talk nerdy]]",
+      "links": [
+        {
+          "name": "talk nerdy",
+          "link": "talk nerdy",
+          "pid": "58"
+        }
+      ],
+      "name": "refuse",
+      "pid": "57",
+      "position": {
+        "x": "2702",
+        "y": "701"
+      }
+    },
+    {
+      "text": "#player#\nhow about just... \"talk nerdy to me\"\n[[WOW]]",
+      "links": [
+        {
+          "name": "WOW",
+          "link": "WOW",
+          "pid": "59"
+        }
+      ],
+      "name": "talk nerdy",
+      "pid": "58",
+      "position": {
+        "x": "2702",
+        "y": "851"
+      }
+    },
+    {
+      "text": "#friendA#\nWOW perfect, I HATE that!\n[[lmao]]",
+      "links": [
+        {
+          "name": "lmao",
+          "link": "lmao",
+          "pid": "60"
+        }
+      ],
+      "name": "WOW",
+      "pid": "59",
+      "position": {
+        "x": "2702",
+        "y": "1001"
+      }
+    },
+    {
+      "text": "#friendA#\nbut fine, if you insist \\U1F602 \\U1F602\n[[nerd final]]",
+      "links": [
+        {
+          "name": "nerd final",
+          "link": "nerd final",
+          "pid": "61"
+        }
+      ],
+      "name": "lmao",
+      "pid": "60",
+      "position": {
+        "x": "2702",
+        "y": "1151"
+      }
+    },
+    {
+      "text": "#friendA#\nokay you freakin nerd, your prof is ready\n[[thanks]]",
+      "links": [
+        {
+          "name": "thanks",
+          "link": "thanks",
+          "pid": "62"
+        }
+      ],
+      "name": "nerd final",
+      "pid": "61",
+      "position": {
+        "x": "3201",
+        "y": "300"
+      },
+      "tags": [
+        "tinderFinal"
+      ]
+    },
+    {
+      "text": "#player#\nthanks %friendA , im gonna look now!!",
+      "name": "thanks",
+      "pid": "62",
+      "position": {
+        "x": "3404",
+        "y": "302"
+      },
+      "tags": [
+        "transferToTinder"
+      ]
+    },
+    {
+      "text": "#player#\ni wonder if that'll attract too many hipsters\n[[ur fine]]",
+      "links": [
+        {
+          "name": "ur fine",
+          "link": "ur fine",
+          "pid": "64"
+        }
+      ],
+      "name": "i wonder",
+      "pid": "63",
+      "position": {
+        "x": "2826",
+        "y": "550"
+      }
+    },
+    {
+      "text": "#friendA#\neh, you're fine! It's a good idea tho, shows you're not messin around\n[[pianoFinal]]",
+      "links": [
+        {
+          "name": "pianoFinal",
+          "link": "pianoFinal",
+          "pid": "65"
+        }
+      ],
+      "name": "ur fine",
+      "pid": "64",
+      "position": {
+        "x": "2826",
+        "y": "700"
+      }
+    },
+    {
+      "text": "#friendA#\nokay, i think this is good then. tell me what you think!\n[[thanks]]",
+      "links": [
+        {
+          "name": "thanks",
+          "link": "thanks",
+          "pid": "62"
+        }
+      ],
+      "name": "pianoFinal",
+      "pid": "65",
+      "position": {
+        "x": "3202",
+        "y": "535"
+      }
+    },
+    {
+      "text": "#player#\nEh, im kinda shy. just keep it cute and normal\n[[so your school]]",
+      "links": [
+        {
+          "name": "so your school",
+          "link": "so your school",
+          "pid": "67"
+        }
+      ],
+      "name": "im shy",
+      "pid": "66",
+      "position": {
+        "x": "2957",
+        "y": "401"
+      },
+      "tags": [
+        "shyBio"
+      ]
+    },
+    {
+      "text": "#friendA#\nso you're fine with just, like, your school and year and something short?\n[[sure]]\n[[maybe emoji]]",
+      "links": [
+        {
+          "name": "sure",
+          "link": "sure",
+          "pid": "68"
+        },
+        {
+          "name": "maybe emoji",
+          "link": "maybe emoji",
+          "pid": "69"
+        }
+      ],
+      "name": "so your school",
+      "pid": "67",
+      "position": {
+        "x": "2957",
+        "y": "551"
+      }
+    },
+    {
+      "text": "#player#\nyeah, that's fine!!\n[[normalFinal]]",
+      "links": [
+        {
+          "name": "normalFinal",
+          "link": "normalFinal",
+          "pid": "70"
+        }
+      ],
+      "name": "sure",
+      "pid": "68",
+      "position": {
+        "x": "2956",
+        "y": "701"
+      }
+    },
+    {
+      "text": "#player#\nmaybe add an emoji or two to really spice things up\n[[jesusFinal]]",
+      "links": [
+        {
+          "name": "jesusFinal",
+          "link": "jesusFinal",
+          "pid": "71"
+        }
+      ],
+      "name": "maybe emoji",
+      "pid": "69",
+      "position": {
+        "x": "3086",
+        "y": "701"
+      }
+    },
+    {
+      "text": "#friendA#\nokay, i think it looks pretty cute! wanna check it out?\n[[thanks]]",
+      "links": [
+        {
+          "name": "thanks",
+          "link": "thanks",
+          "pid": "62"
+        }
+      ],
+      "name": "normalFinal",
+      "pid": "70",
+      "position": {
+        "x": "3199",
+        "y": "413"
+      }
+    },
+    {
+      "text": "#friendA#\nJESUS OF COURSE! lol you're helpless. i'll make sure to include em lol. here, check it out!!\n[[thanks]]",
+      "links": [
+        {
+          "name": "thanks",
+          "link": "thanks",
+          "pid": "62"
+        }
+      ],
+      "name": "jesusFinal",
+      "pid": "71",
+      "position": {
+        "x": "3202",
+        "y": "658"
+      }
+    }
+  ],
+  "name": "act_0_scene_0",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.2.1",
+  "ifid": "58FF5A47-593C-48AC-B324-264E54053DBA"
+}

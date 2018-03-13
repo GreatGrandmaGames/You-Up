@@ -1,0 +1,72 @@
+name	messageID	nextMessage	message	triggerID	option0	option0next	option1	option1next	option2	option2next	
+$friendA	1	2	Hey, %player ! I haven't heard from you in a while.	-9999	
+$friendA	2	-1	How are you!?	-9999	Good!	3	Great!	10	
+$player	3	4	I'm pretty good! Things have been weird lately though...	-9999	
+$player	4	5	honestly, i'm tired of boys, lol.	-9999	
+$player	5	6	wbu? how you been?	-9999	
+$friendA	6	7	Ugh, boys! Tell me about it.	-9999	
+$friendA	7	-1	I've just been sitting here swiping on Wink, lol. It's so much better to try to meet people. No more commitment, you know?	-9999	Yeah, I agree!	8	Hm... not for me	9	
+$player	8	13	Yeah, I agree ive always wanted to try it	-9999	
+$player	9	16	Hm, I don't know. it doesn't seem like the thing for me	-9999	
+$player	10	11	I'm great! Finally coming into my own in college.	-9999	
+$player	11	12	i'm meeting a lot of good people, and things are going well!	-9999	
+$player	12	7	what's going on in your life?	-9999	
+$player	13	14	lol	-9999	
+$player	14	15	but i've always been a little nervous to use it. you've had a good experience??	-9999	
+$friendA	15	20	oh hell yeah! wink is the best! You can just have casual hookups and never have to worry about clinginess too soon.	-9999	
+$player	16	17	a lot of the guys on there are creeps right?	-9999	
+$friendA	17	18	well there's always gonna be creeps, but they're so easy to avoid	-9999	
+$friendA	18	19	you just ghost them and they get the hint \U1F923 \U1F923	-9999	
+$friendA	19	21	the creeps come and go	-9999	
+$friendA	20	21	omg please make one! you'd get so many likes, we both know you're a 10	-9999	
+$friendA	21	-1	I can set yours up if you want!!	-9999	sure!	22	hmm...	23	
+$player	22	24	Sure!! omg i'm nervous, how does this work?!	-9999	
+$player	23	25	I'm honestly not too sure	-9999	
+$friendA	24	34	It's ok, I got you!	-9999	
+$player	25	26	you're the only one I've heard that seems to be having a good time	-9999	
+$friendA	26	-1	ugh \U1F62B	-9999	ugh, fine!!	27	why so sad?!?	28	
+$player	27	34	ugh, fine!!	-9999	
+$player	28	29	why so sad??	-9999	
+$player	29	30	I'm kinda shy, and what if I don't wanna meet up with them?	-9999	
+$friendA	30	31	it'll be fine! You're hot as a flaming hot cheeto	-9999	
+$friendA	31	-1	no but really, you'll be fine. I'll walk you through it! i think it'd be good for you, have some fun in college... It'll be your only time really to be this open and free. What do you say?	-9999	fine, i'll try it!	32	Okay, but i choose!	33	
+$player	32	34	fine! You wore me down... what do I have to do?	-9999	
+$player	33	34	fine, but i get to choose what goes on my profile. Deal?	-9999	
+$friendA	34	35	okay, perfect! I can just set it up for you!	-9999	
+$friendA	35	-1	What do you want your bio to portray you?? what are you lookin for?	-9999	flirty	36	normal	37	funny	38	
+$player	36	39	screw it, make it flirty. show the world how hot i am	flirty-bio	
+$player	37	42	eh, just do something normal i guess!	-9999	
+$player	38	43	show the world how im a catch	-9999	
+$player	39	40	hahaha	-9999	
+$friendA	40	41	girl you're gonna get so many matches, i'll make it nice and hot. I'm looking through your photo feed to get some hot pics too, don't worry	-9999	
+$friendA	41	50	what interests do u think u want highlhghted?	-9999	
+$friendA	42	46	normal is good! Lol, i'm gonna find some pics from your photo feed. i'll portray you as cute and down for a nice casual time	-9999	
+$player	43	44	you know im the funniest persof on the planet	-9999	
+$player	44	45	**person	-9999	
+$player	45	51	ugh. make me funny. get the pic of me with the cow!!!	-9999	
+$player	46	47	so, exactly the opposite	-9999	
+$player	47	48	lol, im joking.	-9999	
+$player	48	49	we all know im a gd 10	-9999	
+$friendA	49	41	hahahaha never change, %player. 	-9999	
+$friendA	50	-1	highlighted** ? please don't do computers... \U1F606	-9999	computers	54	piano	55	im shy	66	
+$friendA	51	52	"moo bitch get out the way?"	-9999	
+$friendA	52	53	legendary caption!!!! lmao	-9999	
+$friendA	53	41	okay i got you. now let's make your bio interestin	-9999	
+$player	54	56	hell yeah. get me a nerd boi	computerBio	
+$player	55	63	hahaha, fair enough. talk about music! i love playing piano	pianoBio	
+$player	56	57	i'm in comp sci, how can my entire profile not be about computers	-9999	
+$friendA	57	58	LMAO %playerCaps NO!!! i refuse to be responsible for this prof if youre tryna put all this nerd sht in	-9999	
+$player	58	59	how about just... "talk nerdy to me"	-9999	
+$friendA	59	60	WOW perfect, I HATE that!	-9999	
+$friendA	60	61	but fine, if you insist \U1F602 \U1F602	-9999	
+$friendA	61	62	okay you freakin nerd, your prof is ready	tinderFinal	
+$player	62	-777	thanks %friendA , im gonna look now!!	transferToTinder	
+$player	63	64	i wonder if that'll attract too many hipsters	-9999	
+$friendA	64	65	eh, you're fine! It's a good idea tho, shows you're not messin around	-9999	
+$friendA	65	62	okay, i think this is good then. tell me what you think!	-9999	
+$player	66	67	Eh, im kinda shy. just keep it cute and normal	shyBio	
+$friendA	67	-1	so you're fine with just, like, your school and year and something short?	-9999	sure	68	maybe emoji	69	
+$player	68	70	yeah, that's fine!!	-9999	
+$player	69	71	maybe add an emoji or two to really spice things up	-9999	
+$friendA	70	62	okay, i think it looks pretty cute! wanna check it out?	-9999	
+$friendA	71	62	JESUS OF COURSE! lol you're helpless. i'll make sure to include em lol. here, check it out!!	-9999	
