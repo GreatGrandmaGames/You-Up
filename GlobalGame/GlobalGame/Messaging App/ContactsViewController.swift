@@ -10,13 +10,18 @@ import UIKit
 
 let gm = GameManager()
 
-class ContactsViewController: UITableViewController {
+class ContactsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+    @IBOutlet weak var contactsList: UITableView!
     
     var loadedCharacters = [Sender]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        contactsList.delegate = self
+        contactsList.dataSource = self
+                
         loadedCharacters = gm.senders
         
         print(loadedCharacters)
@@ -27,22 +32,20 @@ class ContactsViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return loadedCharacters.count
     }
     
     //9a added
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
         return 90
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) ->
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) ->
         UITableViewCell {
+            
             
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "ContactCell", for: indexPath) as? ContactCell else {
                 fatalError("Dequeued cell not of type: ContactCell")
@@ -51,14 +54,20 @@ class ContactsViewController: UITableViewController {
             let contact = loadedCharacters[indexPath.row]
             
             cell.sender = contact
-            cell.name.text = contact.name
-            //icon - from dating app?
+            cell.nameField.text = contact.name
+            cell.nameField.font = UIFont(name: "Avenir", size: 24)
+            cell.contactImage.image = UIImage(named: (contact.name))
+            
+            if(contact.knownFrom == .Wink){
+                cell.winkLogo.image = UIImage(named: ("winkLogo"))
+            }
+            //cell.profilePic
             
             return cell
     }
     
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         guard let contactCell = self.tableView(tableView, cellForRowAt: indexPath) as? ContactCell else {
             fatalError("Dequeued cell not of type: ContactCell")
@@ -72,17 +81,15 @@ class ContactsViewController: UITableViewController {
             self.present(messagingScene, animated: true, completion: nil)
         }
     }
-
 }
 
 class ContactCell : UITableViewCell {
     
-    @IBOutlet weak var name: UITextField!
-    @IBOutlet weak var profilePic: UIImageView!
+    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var contactImage: UIImageView!
     @IBOutlet weak var winkLogo: UIImageView!
     
     var sender : Sender?
-    //let icon
     
     public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
