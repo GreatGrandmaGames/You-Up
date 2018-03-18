@@ -10,12 +10,14 @@
 import SpriteKit
 import GameplayKit
 
-var ceiling : CGFloat = 400
+var ceiling : CGFloat = 0
 var readingFactor : Double = 0.4
 let messageIndentPercentage : CGFloat = 0.03
 
 class MessageScene: SKScene {
     
+    
+    let optionBackground : SKSpriteNode? = SKSpriteNode(imageNamed: "optionBackdrop")
     public var speechTimer : Double = 0
     
     public var currentMessageUID : String = ""
@@ -41,6 +43,18 @@ class MessageScene: SKScene {
     }
     
     override func didMove(to view: SKView) {
+        //harcoded, provides backdrop for options
+        var loc : CGFloat = -440
+        optionBackground?.position = CGPoint(x: 0, y: loc)
+        optionBackground?.size = CGSize(width: self.size.width, height: 500)
+        optionBackground?.zPosition = 0
+        self.addChild(optionBackground!)
+        
+        //so that ceiling is flexible on cross platforms, not hardcoded
+        ceiling = self.size.height / 2
+        ceiling = ceiling + self.position.y
+        
+        
         //Background
         let background = SKSpriteNode(color: UIColor.white, size: self.size)
         background.zPosition = -10
@@ -119,14 +133,15 @@ class MessageScene: SKScene {
         let touch = touches.first!
         let positionInScene = touch.location(in: self)
         let touchedNode = self.atPoint(positionInScene)
+        let colorize = SKAction.colorize(with: .gray, colorBlendFactor: 1, duration: 0.5)
         
         if let labelNode = touchedNode as? SKLabelNode {
             if let optParent = labelNode.parent as? OptionNode {
-                onOption(opt: optParent.option)
+                optParent.background.run(colorize)
             }
         } else if let spriteNode = touchedNode as? SKSpriteNode {
             if let optParent = spriteNode.parent as? OptionNode {
-                onOption(opt: optParent.option)
+               optParent.background.run(colorize)
             }
         }
     }
@@ -140,13 +155,38 @@ class MessageScene: SKScene {
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        let touch = touches.first!
+        let positionInScene = touch.location(in: self)
+        let touchedNode = self.atPoint(positionInScene)
+        let colorize = SKAction.colorize(with: .lightGray, colorBlendFactor: 1, duration: 0.5)
+        
+        //colorize background of all options back to gray if a touch is cancelled
+        for child in self.children as! [SKNode] {
+            if let opt = child as? OptionNode{
+                 opt.background.run(colorize)
+            }
+            // ...
+        }
+        
+        if let labelNode = touchedNode as? SKLabelNode {
+            if let optParent = labelNode.parent as? OptionNode {
+                onOption(opt: optParent.option)
+            }
+        } else if let spriteNode = touchedNode as? SKSpriteNode {
+            if let optParent = spriteNode.parent as? OptionNode {
+                onOption(opt: optParent.option)
+            }
+        }
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
+       
     }
     
     var timeInterval : Double = 0
@@ -214,7 +254,7 @@ class MessageScene: SKScene {
             if m.message.sender != nil {
                 playASound(fileName: "textSent")
                 //hardcode, needs to scale
-                xPos = self.frame.width * (messageIndentPercentage - 1/2)
+                xPos = self.frame.width * (messageIndentPercentage - 1/2) 
 
             } else {
                 //hardcode, needs to scale
@@ -230,8 +270,9 @@ class MessageScene: SKScene {
  
             for l in messageNodes {
                 
+                //messages go off screen i think?
                 let point = CGPoint(x: l.position.x, y: l.position.y + (m.background.size.height * 1.2 ) + 40)
-                if(l.position.y + (l.background.size.height * 0.5) >= ceiling - 200){
+                if(l.position.y + (l.background.size.height * 0.5) >= ceiling ){
                     l.removeFromParent()
                     continue
                 }
@@ -255,18 +296,47 @@ class MessageScene: SKScene {
     //Helper for spawnMessageNode
     func spawnOptions(_ message: Message){
         
+        //remove the previous option backdrops to prevent too many nodes
+        for child in self.children{
+            if(child.name == "removeMe"){
+                child.removeFromParent()
+                print("gone!")
+            }
+        }
+        
         var counter :CGFloat = 0
+        var backDropHeight : CGFloat = 0
         
         for o in message.options! {
             let optionNode = OptionNode(o)
             optionNode.move(toParent: self)
             
+            
             optionNode.position = CGPoint(x: optionNode.position.x, y: -300 - counter * 120)
+            optionNode.zPosition = 10
+            
+           
+            
+            //so that the option backdrop doesn't disappear
+            var tempBack : SKSpriteNode = SKSpriteNode(imageNamed: "betterWhiteBox")
+            tempBack.size = optionNode.background.size
+            tempBack.position = optionNode.position
+            tempBack.color = .lightGray
+            tempBack.colorBlendFactor = 0.5
+            tempBack.zPosition = 5
+            tempBack.name = "removeMe"
+            self.addChild(tempBack)
             
             counter += 1.0
             
+            
             optionNodes.append(optionNode)
         }
+       
+        //var loc : CGFloat = 0 - self.size.height / 2 + backDropHeight/2
+        
+        
+        
     }
     
     //Helper for spawnMessageNode

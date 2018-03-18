@@ -28,11 +28,11 @@ public class Message : NSObject {
         
         var i = 0
         
-        while(i < message.count ) {
+        while(i < message.characters.count ) {
             let startWordIndex = message.index(message.startIndex, offsetBy: i)
             var iAsIndex = startWordIndex
             
-            while i < message.count && message[iAsIndex] != " "  {
+            while i < message.characters.count && message[iAsIndex] != " "  {
                 i+=1
                 iAsIndex = message.index(message.startIndex, offsetBy: i)
             }

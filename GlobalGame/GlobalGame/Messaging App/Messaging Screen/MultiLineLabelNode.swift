@@ -28,18 +28,18 @@ public class MultiLineLabelNode : SKNode {
         var yPos : CGFloat = 0
         var lineNums = 0
         
-        while i < text.count {
+        while i < text.characters.count {
             lineNums += 1
             
             var lineString = ""
             
             //this is the maxLineCharCount! Adjusrt this to adjust num chars that appear on a single line
-            while(i < text.count && i < 35 * lineNums) {
+            while(i < text.characters.count && i < 35 * lineNums) {
                 //Find word
                 let startWordIndex = text.index(text.startIndex, offsetBy: i)
                 var iAsIndex = startWordIndex
                 
-                while i < text.count && text[iAsIndex] != " "  {
+                while i < text.characters.count && text[iAsIndex] != " "  {
                     i+=1
                     iAsIndex = text.index(text.startIndex, offsetBy: i)
                 }
@@ -53,7 +53,13 @@ public class MultiLineLabelNode : SKNode {
             lineNode.fontSize = textSize
             lineNode.fontName = fontName
 
-            lineNode.position = CGPoint(x: 0, y: yPos)
+            //where text is on bubble. if the color is gray, then player is sending, and offset is inward toward left
+            if(backgroundColor == UIColor.gray){
+                 lineNode.position = CGPoint(x: -20, y: yPos - 15)
+            }else{
+                 lineNode.position = CGPoint(x: 18, y: yPos - 15)
+            }
+           
             lineNode.zPosition = 0
             
             
@@ -69,13 +75,28 @@ public class MultiLineLabelNode : SKNode {
         
         for l in lines {
             if(maxWidth < l.frame.width){
-                maxWidth = l.frame.width
+                maxWidth = l.frame.width + 30
             }
             
-            totalHeight += l.frame.height
+            totalHeight += l.frame.height + 20
         }
         
-        self.background = SKSpriteNode(texture: backgroundTexture, color: backgroundColor, size: CGSize(width: maxWidth * extraWidthPercentage, height: totalHeight * extraHeightPercentage))
+        //the stretching of the image looks bad sometimes. I made a couple different sized bubbles to try to
+       // prevent this
+        var bubble : SKTexture
+        bubble = SKTexture(imageNamed: "bigBubble2")
+        //these numbers im not sure o.
+        if(maxWidth < 400 ){
+            bubble = SKTexture(imageNamed: "middleBubble2")
+        }
+        if(maxWidth < 200){
+            bubble = SKTexture(imageNamed: "smallBubble")
+        }
+        if(backgroundColor == UIColor.lightGray){
+            bubble = SKTexture(imageNamed: "bigBubble2")
+        }
+        
+        self.background = SKSpriteNode(texture: bubble, color: backgroundColor, size: CGSize(width: maxWidth * extraWidthPercentage, height: totalHeight * extraHeightPercentage))
         
         self.background.colorBlendFactor = 1
         self.background.zPosition = -1

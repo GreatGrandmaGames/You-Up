@@ -16,14 +16,14 @@ public class OptionNode : MultiLineLabelNode {
     public init(_ o: Option) {
         option = o
         
-        super.init(backgroundTexture: SKTexture(imageNamed: "whiteMessage"), backgroundColor: UIColor.red, text: o.text, fontName: "Avenir", textSize: 36.0)
+        super.init(backgroundTexture: SKTexture(imageNamed: "betterWhiteBox"), backgroundColor: UIColor.lightGray, text: o.text, fontName: "Avenir", textSize: 36.0)
         
         for l in super.lines {
             l.name = "Option Node"
         }
 
         //hardcode
-        super.background.size = CGSize(width: 100.0, height: 60.0)
+        super.background.size = CGSize(width: 650.0, height: 80.0)
         super.background.name = "Option Node"
     }
     

@@ -11,6 +11,7 @@ import UIKit
 let gm = GameManager()
 
 class ContactsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
 
     @IBOutlet weak var contactsList: UITableView!
     
@@ -56,13 +57,17 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
             
             let contact = loadedCharacters[indexPath.row]
             
+            //SET VISUAL PROPERTIES TO DISPLAY IN CELL
             cell.sender = contact
             cell.nameField.text = contact.name
             cell.nameField.font = UIFont(name: "Avenir", size: 24)
             cell.contactImage.image = UIImage(named: (contact.name))
-            
+            //i dont know if there is a different way we might want to control this in the future
+            if(contact.newMessage){
+                cell.newMessage.image = UIImage(named: ("newMessageCircle"))
+            }
             if(contact.knownFrom == .Wink){
-                cell.winkLogo.image = UIImage(named: ("winkLogo"))
+                cell.winkLogo.image = UIImage(named: ("winkLogo2"))
             }
             //cell.profilePic
             
@@ -79,18 +84,26 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
         if(contactCell.sender != nil) {
             let messagingScene = self.storyboard!.instantiateViewController(withIdentifier: "Messaging") as! GameViewController;
             
-            messagingScene.sender = contactCell.sender!;
+    
             
-            self.present(messagingScene, animated: true, completion: nil)
+            messagingScene.sender = contactCell.sender!
+            self.present(messagingScene, animated: false, completion: nil)
+            
         }
     }
+    
+    
 }
+
+
 
 class ContactCell : UITableViewCell {
     
-    @IBOutlet weak var nameField: UITextField!
-    @IBOutlet weak var contactImage: UIImageView!
-    @IBOutlet weak var winkLogo: UIImageView!
+    
+    @IBOutlet weak var newMessage: UIImageView! //red bubble indicating you have a new message from this person
+    @IBOutlet weak var nameField: UILabel! //the displayed name
+    @IBOutlet weak var contactImage: UIImageView! //the profile image
+    @IBOutlet weak var winkLogo: UIImageView! //the logo to display the wink sign, indicating that the person was met on Wink
     
     var sender : Sender?
     

@@ -14,9 +14,10 @@ class GameViewController: UIViewController {
     
     var sender : Sender?
     
+    @IBOutlet weak var toProfile: UIButton!
     @IBOutlet weak var navBarTitle: UINavigationItem!
     @IBOutlet weak var skview: SKView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,6 +31,7 @@ class GameViewController: UIViewController {
                     messagingScene.sender = sender!
                     
                     navBarTitle.title = sender!.name
+                    toProfile.setBackgroundImage(UIImage(named: (sender!.name)), for: UIControlState.normal)
                 } else {
                     fatalError("Transferring to Message Scene without valid sender")
                 }
@@ -67,12 +69,26 @@ class GameViewController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    @IBAction func goToProfilePressed(_ sender: Any) {
+        //here we would load a profile (presumably only if the contact is from WInk?)
+    }
     
     @IBAction func backButtonPressed(_ sender: Any) {
         
         //save conversation state
         
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: false, completion: nil)
     }
     
 }
+
+
+//extension MessageScene: UIViewControllerTransitioningDelegate {
+//    func animationController(forPresented presented: UIViewController,
+//                             presenting: UIViewController,
+//                             source: UIViewController)
+//        -> UIViewControllerAnimatedTransitioning? {
+//            return AnimationController()
+//    }
+//}
+
