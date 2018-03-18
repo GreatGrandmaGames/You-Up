@@ -15,8 +15,7 @@ var readingFactor : Double = 0.4
 let messageIndentPercentage : CGFloat = 0.03
 
 class MessageScene: SKScene {
-    
-    
+ 
     let optionBackground : SKSpriteNode? = SKSpriteNode(imageNamed: "optionBackdrop")
     public var speechTimer : Double = 0
     
@@ -26,85 +25,87 @@ class MessageScene: SKScene {
     public var messageNodes : [MessageNode] = [MessageNode]() //this is actual nodes in the scene
     public var optionNodes : [OptionNode] = [OptionNode]()
     
-    public var sender : Sender
+    private var sender : Sender? = nil
     
-    public init(_ sender: Sender) {
-        self.sender = sender
-        
-        super.init()
-    }
+    private var firstMove : Bool = true
     
     required init?(coder aDecoder: NSCoder) {
-        
-        //init your senders manually for now
-        sender = Sender(name: "Jason", color: UIColor.blue, knownFrom: .Wink)
-
         super.init(coder: aDecoder)
     }
     
+    func setSender(sender: Sender){
+        self.sender = sender
+    }
+    
     override func didMove(to view: SKView) {
-        //harcoded, provides backdrop for options
-        var loc : CGFloat = -440
-        optionBackground?.position = CGPoint(x: 0, y: loc)
-        optionBackground?.size = CGSize(width: self.size.width, height: 500)
-        optionBackground?.zPosition = 0
-        self.addChild(optionBackground!)
         
-        //so that ceiling is flexible on cross platforms, not hardcoded
-        ceiling = self.size.height / 2
-        ceiling = ceiling + self.position.y
+        if firstMove {
+            
+            firstMove = false
         
-        
-        //Background
-        let background = SKSpriteNode(color: UIColor.white, size: self.size)
-        background.zPosition = -10
-        
-        self.addChild(background)
+            //harcoded, provides backdrop for options
+            let loc : CGFloat = -440
+            optionBackground?.position = CGPoint(x: 0, y: loc)
+            optionBackground?.size = CGSize(width: self.size.width, height: 500)
+            optionBackground?.zPosition = 0
+            self.addChild(optionBackground!)
+            
+            //so that ceiling is flexible on cross platforms, not hardcoded
+            ceiling = self.size.height / 2
+            ceiling = ceiling + self.position.y
+            
+            
+            //Background
+            let background = SKSpriteNode(color: UIColor.white, size: self.size)
+            background.zPosition = -10
+            
+            self.addChild(background)
 
-        //Load contents - parsing
-        do {
-            let contents = try readFile(path: "test1")
-            
-            var entries = [[String]]()
-            
-            contents.enumerateLines(invoking: { (string, b : inout Bool) in
-                entries.append(string.components(separatedBy: "\t"))
-            })
-            
-            for i in 1..<entries.count {
+            //Load contents - parsing
+            do {
+                let contents = try readFile(path: "test1")
                 
-                let line = entries[i]
+                var entries = [[String]]()
                 
-                if line[2] == "-1" {
+                contents.enumerateLines(invoking: { (string, b : inout Bool) in
+                    entries.append(string.components(separatedBy: "\t"))
+                })
+                
+                for i in 1..<entries.count {
                     
-                    var options = [Option]()
+                    let line = entries[i]
                     
-                    for j in [5,7,9]{
-                        if j + 1 < line.count && line[j] != "" && line[j] != "" {
-                            print(line[j + 1])
-                            options.append(Option(line[j], responseUID: line[j + 1]))
+                    if line[2] == "-1" {
+                        
+                        var options = [Option]()
+                        
+                        for j in [5,7,9]{
+                            if j + 1 < line.count && line[j] != "" && line[j] != "" {
+                                print(line[j + 1])
+                                options.append(Option(line[j], responseUID: line[j + 1]))
+                            }
                         }
-                    }
-                    
-                    messages.append(Message(line[3], uid: line[1], nextUID: String(-1), sender: sender, options: options))
-                    
-                } else {
-                    if line[0] == "$player" {
-                        messages.append(Message(line[3], uid: line[1], nextUID: line[2]))
+                        
+                        messages.append(Message(line[3], uid: line[1], nextUID: String(-1), sender: sender!, options: options))
                         
                     } else {
-                        messages.append(Message(line[3], uid: line[1], nextUID: line[2], sender: sender))
-                        
+                        if line[0] == "$player" {
+                            messages.append(Message(line[3], uid: line[1], nextUID: line[2]))
+                            
+                        } else {
+                            messages.append(Message(line[3], uid: line[1], nextUID: line[2], sender: sender!))
+                            
+                        }
                     }
                 }
+                
+            } catch TSVParsingError.FileNotFound{
+                print("Error: Please provide a TSV")
+            } catch TSVParsingError.FileNotVaid {
+                print("Error: TSV file not valid")
+            } catch {
+                print("Error: Parsing failed")
             }
-            
-        } catch TSVParsingError.FileNotFound{
-            print("Error: Please provide a TSV")
-        } catch TSVParsingError.FileNotVaid {
-            print("Error: TSV file not valid")
-        } catch {
-            print("Error: Parsing failed")
         }
     }
     
@@ -315,7 +316,6 @@ class MessageScene: SKScene {
             optionNode.position = CGPoint(x: optionNode.position.x, y: -300 - counter * 120)
             optionNode.zPosition = 10
             
-           
             
             //so that the option backdrop doesn't disappear
             var tempBack : SKSpriteNode = SKSpriteNode(imageNamed: "betterWhiteBox")

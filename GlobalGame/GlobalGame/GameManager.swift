@@ -9,12 +9,14 @@
 import Foundation
 import SpriteKit
 
-public class GameManager : NSObject {
-        
-    var senders = [Sender]()
+public class GameManager  {
     
-    //temp
-    public override init() {
+    var senders = [Sender]()
+    var senderScenes = [Sender : MessageScene]()
+    
+    public  init() {
+        //temp
+
         senders.append(Sender(name: "Jason", color: UIColor.blue, knownFrom: .Wink))
         senders.append(Sender(name: "Alvaro", color: UIColor.blue, knownFrom: .Wink))
         senders.append(Sender(name: "Grady", color: UIColor.blue, knownFrom: .Wink))
@@ -22,6 +24,7 @@ public class GameManager : NSObject {
         senders.append(Sender(name: "Frank", color: UIColor.blue, knownFrom: .Wink))
         senders.append(Sender(name: "Jordan", color: UIColor.blue, knownFrom: .Wink))
         senders.append(Sender(name: "Chris", color: UIColor.blue, knownFrom: .Wink))
-        
     }
+    
+    
 }

@@ -21,32 +21,41 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Load the SKScene from 'GameScene.sks'
-        if let scene = SKScene(fileNamed: "MessageScene") {
-            // Set the scale mode to scale to fit the window
-            scene.scaleMode = .fill
-            
-            if let messagingScene = scene as? MessageScene {
-                if sender != nil {
-                    messagingScene.sender = sender!
-                    
-                    navBarTitle.title = sender!.name
-                    toProfile.setBackgroundImage(UIImage(named: (sender!.name)), for: UIControlState.normal)
-                } else {
-                    fatalError("Transferring to Message Scene without valid sender")
-                }
-            } else {
-                fatalError("Scene is not messaging scene")
-            }
-            
-            // Present the scene
-            skview.presentScene(scene)
-        }
+        // Load the SKScene from 'GameScene.sks' or load from gameManager
+        
+        navBarTitle.title = sender!.name
+        toProfile.setBackgroundImage(UIImage(named: (sender!.name)), for: UIControlState.normal)
         
         skview.ignoresSiblingOrder = true
         
         skview.showsFPS = true
         skview.showsNodeCount = true
+        
+        if sender != nil {
+            
+            if gameManager.senderScenes.keys.contains(sender!) {
+                
+                skview.presentScene(gameManager.senderScenes[sender!]!)
+                
+            } else {
+            
+                if let scene = SKScene(fileNamed: "MessageScene") {
+                    // Set the scale mode to scale to fit the window
+                    scene.scaleMode = .fill
+                    
+                    if let messagingScene = scene as? MessageScene {
+                            messagingScene.setSender(sender: sender!)
+                    }
+                    
+                    skview.presentScene(scene)
+                
+                } else {
+                    fatalError("Scene is not messaging scene")
+                }
+            }
+        } else {
+            fatalError("Transferring to Message Scene without valid sender")
+        }
     }
 
     override var shouldAutorotate: Bool {
@@ -75,7 +84,10 @@ class GameViewController: UIViewController {
     
     @IBAction func backButtonPressed(_ sender: Any) {
         
-        //save conversation state
+        if let messageScene = self.skview.scene as? MessageScene {
+        
+            gameManager.senderScenes[self.sender!] = messageScene
+        }
         
         self.dismiss(animated: false, completion: nil)
     }

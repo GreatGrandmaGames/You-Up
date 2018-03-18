@@ -8,7 +8,8 @@
 
 import UIKit
 
-let gm = GameManager()
+//find better palce for this
+let gameManager = GameManager()
 
 class ContactsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -20,13 +21,12 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
-        
         contactsList.delegate = self
         contactsList.dataSource = self
+        
+        //contactsList.allowsSelection = false
                 
-        loadedCharacters = gm.senders
+        loadedCharacters = gameManager.senders
         
         print(loadedCharacters)
     }
@@ -51,7 +51,7 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
         UITableViewCell {
             
             
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "ContactCell", for: indexPath) as? ContactCell else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "ContactCell") as? ContactCell else {
                 fatalError("Dequeued cell not of type: ContactCell")
             }
             
@@ -78,13 +78,13 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         guard let contactCell = self.tableView(tableView, cellForRowAt: indexPath) as? ContactCell else {
-            fatalError("Dequeued cell not of type: ContactCell")
+            fatalError("Cell not of type: ContactCell")
         }
         
         if(contactCell.sender != nil) {
             let messagingScene = self.storyboard!.instantiateViewController(withIdentifier: "Messaging") as! GameViewController;
             
-    
+            contactCell.selectionStyle = .none
             
             messagingScene.sender = contactCell.sender!
             self.present(messagingScene, animated: false, completion: nil)
