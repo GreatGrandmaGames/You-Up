@@ -63,7 +63,7 @@ class MessageScene: SKScene {
 
             //Load contents - parsing
             do {
-                let contents = try readFile(path: "test1")
+                let contents = try readFile(path: "act0scene0")
                 
                 var entries = [[String]]()
                 

@@ -36,6 +36,7 @@
 		83BA0469201E5D8900F7ED27 /* Menu.sks in Resources */ = {isa = PBXBuildFile; fileRef = 83BA0468201E5D8900F7ED27 /* Menu.sks */; };
 		83BA046B201E5D9700F7ED27 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BA046A201E5D9700F7ED27 /* Menu.swift */; };
 		83BA0489201E725E00F7ED27 /* Credits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BA0488201E725E00F7ED27 /* Credits.swift */; };
+		DD3E72F520617C650075DFF1 /* act0scene0.tsv in Resources */ = {isa = PBXBuildFile; fileRef = DD3E72F420617C650075DFF1 /* act0scene0.tsv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		83BA0468201E5D8900F7ED27 /* Menu.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Menu.sks; sourceTree = "<group>"; };
 		83BA046A201E5D9700F7ED27 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		83BA0488201E725E00F7ED27 /* Credits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credits.swift; sourceTree = "<group>"; };
+		DD3E72F420617C650075DFF1 /* act0scene0.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = act0scene0.tsv; path = ../../../Story/Parser/exports/act0scene0.tsv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 		17EAF96A20378E9F0079CAFD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DD3E72F420617C650075DFF1 /* act0scene0.tsv */,
 				83BA0458201E305100F7ED27 /* notification.wav */,
 				17EAF96820378E970079CAFD /* textSent.wav */,
 				17EAF96620378E280079CAFD /* test1.tsv */,
@@ -340,6 +343,7 @@
 			files = (
 				83BA040E201E1B1300F7ED27 /* Main.storyboard in Resources */,
 				83BA044F201E283600F7ED27 /* MessageScene.sks in Resources */,
+				DD3E72F520617C650075DFF1 /* act0scene0.tsv in Resources */,
 				83BA0405201E1B1300F7ED27 /* GameScene.sks in Resources */,
 				83BA0469201E5D8900F7ED27 /* Menu.sks in Resources */,
 				83BA0410201E1B1300F7ED27 /* Assets.xcassets in Resources */,
